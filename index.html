@@ -1,73 +1,94 @@
-<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 8 Workbook v1.0 — Route Audit Workbook</title>
-  <style>
-    :root { --bg:#f5f7fb; --panel:#ffffff; --ink:#1f2430; --muted:#5a6472; --line:#d7dee8; --accent:#365f91; --accent-dark:#223f63; --accent-soft:#eaf2fb; --warn:#7a4f00; --warn-bg:#fff5df; --good-bg:#eef7ec; --shadow:0 12px 28px rgba(22,35,55,0.10); --radius:18px; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Chapter 8 Workbook v2.0 — Justice, Recognition</title>
+<meta content="Accessible Chapter 8 workbook rebuilt on the finalized chapter text: the real Tuskegee case, the Four-Audit Diagnostic, Testimonial Injustice, the bail hearing, and the process trail." name="description"/>
+<style>
+    :root {
+      --bg:#f5f7fb; --panel:#ffffff; --ink:#1f2430; --muted:#5a6472; --line:#d7dee8;
+      --accent:#365f91; --accent-dark:#223f63; --accent-soft:#eaf2fb;
+      --danger:#9c2d23; --good-bg:#eef7ec; --shadow:0 12px 28px rgba(22,35,55,0.10); --radius:18px;
+    }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:linear-gradient(180deg,#f5f7fb 0%,#e7edf5 100%); line-height:1.55; }
-    header { background:radial-gradient(circle at top left,#f7fbff,#e4eef8 58%,#cbdbea 100%); border-bottom-color:#bccbdd; border-bottom-style:solid; border-bottom-width:1px; padding:28px 18px; }
+    body { margin:0; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:linear-gradient(180deg,#f5f7fb 0%,#e7edf5 100%); line-height:1.55; }
+    header { background:radial-gradient(circle at top left,#f7fbff,#e4eef8 58%,#cbdbea 100%); border-bottom:1px solid #bccbdd; padding:28px 18px; }
     .wrap { max-width:1120px; margin:0 auto; }
-    .hero { display:grid; grid-template-columns:1.6fr .9fr; gap:20px; align-items:stretch; }
-    .hero-card,.side-card,section { background:rgba(255,255,255,.96); border-color:var(--line); border-style:solid; border-width:1px; border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { display:grid; grid-template-columns:1.6fr 0.9fr; gap:20px; align-items:stretch; }
+    .hero-card, .side-card, section { background:rgba(255,255,255,0.96); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
     .hero-card { padding:26px; } .side-card { padding:20px; }
     .eyebrow { text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; font-weight:800; color:var(--accent-dark); }
-    h1 { margin:8px 0 10px; font-size:clamp(2rem,4vw,3.5rem); line-height:1.05; }
+    h1 { margin:8px 0 10px; font-size:clamp(2rem,4vw,3.3rem); line-height:1.05; }
     h2 { margin-top:0; color:var(--accent-dark); font-size:1.55rem; }
-    h3 { color:var(--accent-dark); margin-bottom:8px; } p { margin-top:0; }
+    h3 { color:var(--accent-dark); margin-bottom:8px; }
+    p { margin-top:0; }
     .tagline { font-size:1.15rem; color:#2e3542; max-width:820px; }
     .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .pill { display:inline-flex; align-items:center; gap:6px; border-color:#b9c9dc; border-style:solid; border-width:1px; border-radius:999px; padding:6px 10px; background:#f6fbff; font-size:.88rem; color:var(--accent-dark); font-weight:650; }
+    .pill { display:inline-flex; align-items:center; gap:6px; border:1px solid #b9c9dc; border-radius:999px; padding:6px 10px; background:#f6fbff; font-size:.88rem; color:var(--accent-dark); font-weight:650; }
     .grid { display:grid; grid-template-columns:260px 1fr; gap:18px; margin-top:18px; }
     nav { position:sticky; top:12px; align-self:start; }
-    .progress-box { background:var(--panel); border-color:var(--line); border-style:solid; border-width:1px; border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; }
+    .progress-box { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; }
     .bar { height:12px; background:#e1e7ef; border-radius:999px; overflow:hidden; margin:8px 0; }
-    .bar > div { height:100%; width:0%; background:var(--accent); transition-property:width; transition-duration:200ms; transition-timing-function:ease; }
-    .toc { list-style:none; padding:0; margin:10px 0 0; } .toc li { margin:6px 0; }
-    .toc a { color:var(--accent-dark); text-decoration:none; font-weight:700; font-size:.93rem; } .toc a:hover,.toc a:focus { text-decoration:underline; }
-    main { display:grid; gap:18px; } section { padding:22px; }
+    .bar > div { height:100%; width:0%; background:var(--accent); transition:width 200ms ease; }
+    .toc { list-style:none; padding:0; margin:10px 0 0; }
+    .toc li { margin:6px 0; }
+    .toc a { color:var(--accent-dark); text-decoration:none; font-weight:700; font-size:.93rem; }
+    .toc a:hover, .toc a:focus { text-decoration:underline; }
+    main { display:grid; gap:18px; }
+    section { padding:22px; }
     .section-kicker { color:var(--muted); font-weight:750; margin-bottom:6px; }
-    .callout { background:var(--accent-soft); border-left-color:var(--accent); border-left-style:solid; border-left-width:5px; padding:14px 16px; border-radius:12px; margin:14px 0; }
-    .warning { background:var(--warn-bg); border-left-color:var(--warn); border-left-style:solid; border-left-width:5px; padding:14px 16px; border-radius:12px; margin:14px 0; }
-    .success { background:var(--good-bg); border-left-color:#4d7e46; border-left-style:solid; border-left-width:5px; padding:14px 16px; border-radius:12px; margin:14px 0; }
-    .casebox { background:#f9fbfe; border-color:#cfddea; border-style:solid; border-width:1px; border-radius:14px; padding:16px; margin:12px 0; }
-    .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .callout, .warning, .success, .casebox, .stop-box { border-style:solid; border-width:1px; border-radius:14px; padding:16px; margin:14px 0; }
+    .callout { background:var(--accent-soft); border-left:5px solid var(--accent); border-color:var(--line); }
+    .warning { background:#fff5df; border-left:5px solid #7a4f00; border-color:#e9d6a6; }
+    .success { background:var(--good-bg); border-left:5px solid #4d7e46; border-color:#c9e0c4; }
+    .casebox { background:#f9fbfe; border-color:#cfddea; }
+    .stop-box { background:#fff0ee; border:2px solid var(--danger); }
+    .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
     label { display:block; font-weight:800; margin:14px 0 6px; color:#273142; }
     .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
-    input[type="text"],select,textarea { width:100%; font:inherit; color:var(--ink); background:#fff; border-color:#bfcbd8; border-style:solid; border-width:1px; border-radius:12px; padding:11px 12px; }
-    textarea { min-height:104px; resize:vertical; } textarea.output { min-height:360px; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace; white-space:pre; }
-    input:focus,select:focus,textarea:focus,button:focus { outline-color:#284e7d; outline-style:solid; outline-width:3px; outline-offset:2px; }
-    .required-mark { color:#9c2d23; font-weight:900; }
-    .checkline { display:flex; gap:10px; align-items:flex-start; margin-top:10px; }
-    .checkline label { margin:0; font-weight:650; }
-    button { appearance:none; border-width:0; border-radius:999px; background:var(--accent); color:#fff; font-weight:800; padding:11px 16px; cursor:pointer; }
-    button.secondary { background:#e9eef5; color:var(--accent-dark); border-color:#b8c6d6; border-style:solid; border-width:1px; }
-    button:hover { filter:brightness(.96); } .buttons { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
-    .alert { display:none; padding:12px 14px; border-radius:12px; margin:12px 0; font-weight:750; } .alert.show { display:block; } .alert.err { background:#ffe9e5; color:#7b1f15; } .alert.ok { background:#eaf7e8; color:#245722; }
-    table { width:100%; border-collapse:collapse; margin:12px 0; } th,td { border-color:#d7dee8; border-style:solid; border-width:1px; padding:10px; text-align:left; vertical-align:top; } th { background:#edf3fa; }
-    footer { padding:28px 18px 40px; color:var(--muted); text-align:center; }
-    @media (max-width:850px){ .hero,.grid,.two{grid-template-columns:1fr;} nav{position:relative; top:auto;} }
+    textarea, select { width:100%; font:inherit; color:var(--ink); background:#fff; border:1px solid #bfcbd8; border-radius:12px; padding:11px 12px; }
+    textarea { min-height:104px; resize:vertical; }
+    textarea:focus, select:focus, button:focus { outline:3px solid #284e7d; outline-offset:2px; }
+    textarea[aria-invalid="true"], select[aria-invalid="true"] { border-color:var(--danger); background:#fff5f4; }
+    .checkline { display:flex; gap:10px; align-items:flex-start; margin:12px 0; padding:12px; background:#f6fbff; border:1px solid #b9c9dc; border-radius:12px; }
+    .checkline input { margin-top:5px; }
+    .zero-credit { display:block; margin-top:4px; color:var(--muted); font-weight:500; font-size:.88rem; }
+    .buttons { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    button { border:1px solid var(--accent-dark); border-radius:999px; background:var(--accent); color:#fff; padding:10px 14px; font:inherit; font-weight:800; cursor:pointer; }
+    button.secondary { background:#fff; color:var(--accent-dark); }
+    button.danger { background:var(--danger); border-color:#7b1f15; }
+    button:hover { filter:brightness(0.97); }
+    .small { font-size:.9rem; color:var(--muted); }
+    .error-inline { display:none; margin-top:6px; color:var(--danger); font-weight:700; font-size:.92rem; }
+    .error-summary { display:none; background:#fff5f3; border:2px solid var(--danger); border-radius:14px; padding:14px 16px; margin:14px 0; }
+    .error-summary h3 { color:var(--danger); margin-bottom:6px; }
+    #outputText { min-height:340px; font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9rem; }
+    footer { padding:24px 18px 40px; color:var(--muted); text-align:center; }
+    table.mini { width:100%; border-collapse:collapse; margin:12px 0; font-size:.9rem; }
+    table.mini th, table.mini td { border:1px solid #d7dee8; padding:8px; text-align:left; vertical-align:top; }
+    table.mini th { background:#edf3fa; }
+    @media (max-width:860px) { .hero,.grid { grid-template-columns:1fr; } nav { position:static; } }
   </style>
 </head>
 <body>
 <header>
   <div class="wrap hero">
     <div class="hero-card">
-      <div class="eyebrow">Ethics and Critical Thinking · Chapter 8</div>
-      <h1>Chapter 8 Workbook v1.0 — Route Audit Workbook</h1>
-      <p class="tagline">Use the Route Audit to ask how a tool shapes attention, authorship, appeal, and repair.</p>
+      <div class="eyebrow">Chapter 8 Workbook · Justice, Recognition · v2.0</div>
+      <h1>Justice, Recognition</h1>
+      <p class="tagline">The real Tuskegee case, the <strong>Four-Audit Diagnostic</strong> — Rawls, Nozick, Nussbaum, Honneth — and Testimonial Injustice, with a genuine process trail.</p>
       <div class="pill-row">
-        <span class="pill">Case: The AI-Written Email</span><span class="pill">Tool support vs agency capture</span><span class="pill">Portable classroom version</span>
+        <span class="pill">Case: Tuskegee Syphilis Study</span>
+        <span class="pill">The Four-Audit Diagnostic</span>
+        <span class="pill">Testimonial Injustice</span>
       </div>
     </div>
     <aside class="side-card">
-      <h2>Chapter skill</h2>
-      <p><strong>Ethics skill:</strong> distinguish responsible tool support from agency capture.</p>
-      <p><strong>Critical-thinking skill:</strong> audit the route by which a tool directs attention and action.</p>
-      <p><strong>Estimated time:</strong> 25–35 minutes.</p>
+      <h2>What this workbook does</h2>
+      <p><strong>Ethics skill:</strong> Test a structure for fairness using four genuinely different lenses at once.</p>
+      <p><strong>Output:</strong> A Chapter 8 Workbook Output Card.</p>
+      <p class="small">Estimated time: 30–40 minutes.</p>
     </aside>
   </div>
 </header>
@@ -76,220 +97,317 @@
     <div class="progress-box">
       <strong>Progress</strong>
       <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText">0% complete</div>
+      <div id="progressText" class="small">0 of 11 required responses completed.</div>
       <ol class="toc">
         <li><a href="#arrive">1. Arrive</a></li>
-        <li><a href="#case">2. Read the Case</a></li>
-        <li><a href="#tool">3. Tool and Task</a></li>
-        <li><a href="#attention">4. Attention Route</a></li>
-        <li><a href="#capture">5. Support vs Capture</a></li>
-        <li><a href="#data">6. Data and Model Limits</a></li>
-        <li><a href="#authorship">7. Authorship and Appeal</a></li>
-        <li><a href="#repair">8. Repair Route</a></li>
-        <li><a href="#output">9. Output Card</a></li>
+        <li><a href="#case">2. Tuskegee</a></li>
+        <li><a href="#fourlenses">3. The Four Lenses</a></li>
+        <li><a href="#testimonial">4. Testimonial Injustice</a></li>
+        <li><a href="#audit">5. Running the Four Audits</a></li>
+        <li><a href="#bail">6. The Bail Hearing</a></li>
+        <li><a href="#before">7. Before You Reason It Through</a></li>
+        <li><a href="#ownaudit">8. Run the Four-Audit on Your Own Institution</a></li>
+        <li><a href="#after">9. After Working Through It</a></li>
+        <li><a href="#revision">10. The Revision Check</a></li>
+        <li><a href="#output">11. Output Card</a></li>
       </ol>
-      <div class="buttons"><button type="button" class="secondary" id="clearBtn">Clear saved work</button></div>
+      <div class="buttons">
+        <button type="button" class="secondary" id="downloadWorksheet">Download worksheet</button>
+        <button type="button" class="secondary" id="saveBtn">Save now</button>
+        <button type="button" class="danger" id="clearBtn">Clear my responses</button>
+      </div>
     </div>
   </nav>
   <main>
     <section id="arrive">
-      <div class="section-kicker">1. Arrive</div>
-      <h2>Tools can support agency, but they can also capture it.</h2>
-      <p>In Chapter 8, you learned that technology is not just a thing we use. A tool can route attention, shape choices, invite shortcuts, hide context, or open repair. This workbook helps you audit that route before deciding whether the tool is supporting or capturing agency.</p>
-      <div class="warning"><strong>Privacy reminder:</strong> You may use the provided case, a fictional example, a public example, a historical example, a composite example, or a low-stakes personal example. Do not disclose private, identifying, or sensitive information.</div>
-      <div class="checkline"><input type="checkbox" id="privacyAck" data-required><label for="privacyAck">I understand that I can use a non-private example and that this workbook asks for ethical analysis, not confession. <span class="required-mark">*</span></label></div>
+      <div class="section-kicker">1 · Arrive</div>
+      <h2>Designing the rules before you know your seat</h2>
+      <p>Before anyone has picked a room, roommates splitting an apartment reason differently about rent than they would once they know which room is theirs. This chapter takes that instinct to the scale of an entire institution's rules.</p>
+      <div class="warning"><strong>Privacy:</strong> Section 7 asks about a real rule in an institution you're part of. Use a real one if comfortable, or keep it general.</div>
+      <div class="checkline">
+        <input type="checkbox" id="privacyAck" data-required="true" aria-describedby="privacyAck_error">
+        <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
+      </div>
+      <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
     </section>
 
     <section id="case">
-      <div class="section-kicker">2. Read the Case</div>
-      <h2>The AI-Written Email</h2>
-      <div class="casebox"><p>A student needs to send a difficult email to a professor about a missed deadline. The student uses an AI tool to draft the message. The draft sounds polished and confident, but it includes details that are exaggerated, skips responsibility for the missed work, and uses a tone the student would not normally choose. The student can send it immediately, revise it, or start over.</p></div>
-      <label for="caseReaction">What stands out first in this case? <span class="required-mark">*</span></label>
-      <textarea id="caseReaction" data-required></textarea>
-      <label for="quickJudgmentMiss">What might a quick judgment miss? <span class="required-mark">*</span></label>
-      <textarea id="quickJudgmentMiss" data-required></textarea>
+      <div class="section-kicker">2 · Tuskegee</div>
+      <h2>1932–1972</h2>
+      <div class="casebox">
+        <p>From 1932 to 1972, the U.S. Public Health Service enrolled 399 Black men who had syphilis and 201 men without it, telling them they were being treated for "bad blood." They were never told they had syphilis and never treated. When penicillin became the standard treatment in 1947, researchers withheld it — and coordinated with draft boards to prevent participants from receiving it as military inductees. The study continued 25 more years, ending only in 1972 when whistleblower Peter Buxtun leaked it to the press.</p>
+      </div>
+      <label for="case_read">Prompt 2.1 — What made this possible?</label>
+      <p class="hint">The researchers built trust deliberately — meals, burial insurance, a trusted nurse, Eunice Rivers — around a study the men never understood. Why did that trust make the deception more effective, not less?</p>
+      <textarea id="case_read" data-required="true" aria-describedby="case_read_error"></textarea>
+      <p class="error-inline" id="case_read_error">This still needs a response.</p>
     </section>
 
-    <section id="tool">
-      <div class="section-kicker">3. Tool and Task</div>
-      <h2>Name the tool and the task.</h2>
-      <div class="callout"><strong>Tool:</strong> a support that can extend attention, memory, action, or judgment, but still needs responsible use.</div>
-      <label for="toolName">What tool or system is being used? <span class="required-mark">*</span></label>
-      <textarea id="toolName" data-required placeholder="Example: an AI writing assistant."></textarea>
-      <label for="taskName">What task is the tool supposed to help with? <span class="required-mark">*</span></label>
-      <textarea id="taskName" data-required placeholder="Example: drafting a difficult email."></textarea>
-      <label for="toolBenefit">What real benefit could the tool provide? <span class="hint">(optional)</span></label>
-      <textarea id="toolBenefit"></textarea>
+    <section id="fourlenses">
+      <div class="section-kicker">3 · The Four Lenses</div>
+      <h2>Four different questions about fairness</h2>
+      <div class="callout">
+        <strong>Rawls:</strong> Would this rule survive being chosen by someone who didn't yet know which position they'd occupy? (The difference principle: inequality is just only if it benefits the worst off.)<br><br>
+        <strong>Nozick:</strong> Was the historical transaction that produced this outcome actually voluntary and legitimate? (His example: a basketball player earning $250,000 from a million voluntary quarters is not unjust — unless the history behind it wasn't actually voluntary.)<br><br>
+        <strong>Nussbaum:</strong> Does a person have the actual, substantive capability to live with dignity — not merely the formal right to?<br><br>
+        <strong>Honneth:</strong> Has this person's standing — through love, law, or social esteem — been recognized, or actively denied?
+      </div>
+      <label for="lenses_apply">Prompt 3.1 — Apply Nozick's own test to Tuskegee</label>
+      <p class="hint">Nozick's framework depends entirely on the historical transaction being voluntary. Why can no version of his framework call Tuskegee's enrollment legitimate?</p>
+      <textarea id="lenses_apply" data-required="true" aria-describedby="lenses_apply_error"></textarea>
+      <p class="error-inline" id="lenses_apply_error">This still needs a response.</p>
     </section>
 
-    <section id="attention">
-      <div class="section-kicker">4. Attention Route</div>
-      <h2>What does the tool make easy, visible, hidden, or hard?</h2>
-      <label for="makesEasy">What does the tool make easier? <span class="required-mark">*</span></label>
-      <textarea id="makesEasy" data-required></textarea>
-      <label for="makesVisible">What does the tool make more visible or more tempting? <span class="hint">(optional)</span></label>
-      <textarea id="makesVisible"></textarea>
-      <label for="makesHidden">What context, responsibility, or person might the tool hide? <span class="required-mark">*</span></label>
-      <textarea id="makesHidden" data-required></textarea>
-      <label for="makesHard">What does the tool make harder to notice, question, or repair? <span class="required-mark">*</span></label>
-      <textarea id="makesHard" data-required></textarea>
+    <section id="testimonial">
+      <div class="section-kicker">4 · Testimonial Injustice</div>
+      <h2>When a person's own account can't count as evidence</h2>
+      <div class="callout">Testimonial injustice: a person's account of their own experience given less credibility than it deserves because of prejudice against who they are, rather than anything wrong with the account itself.</div>
+      <label for="testimonial_apply">Prompt 4.1 — Apply it to Tuskegee</label>
+      <p class="hint">The men had no route by which their own reported symptoms or confusion about "bad blood" could reach anyone with power to act on it. What does this add to the four lenses that they alone might miss?</p>
+      <textarea id="testimonial_apply" data-required="true" aria-describedby="testimonial_apply_error"></textarea>
+      <p class="error-inline" id="testimonial_apply_error">This still needs a response.</p>
     </section>
 
-    <section id="capture">
-      <div class="section-kicker">5. Support vs Capture</div>
-      <h2>Decide whether agency is being supported or captured.</h2>
-      <div class="callout"><strong>Tool support:</strong> the tool helps the person act more responsibly. <br><strong>Agency capture:</strong> the tool redirects or replaces the person’s attention, judgment, or authorship.</div>
-      <label for="supportCaptureFinding">Which best describes the case? <span class="required-mark">*</span></label>
-      <select id="supportCaptureFinding" data-required>
-        <option value="">Choose one</option>
-        <option>Mostly tool support</option>
-        <option>Mostly agency capture</option>
-        <option>Mixed</option>
-        <option>Unclear</option>
-      </select>
-      <label for="supportEvidence">What evidence suggests tool support? <span class="required-mark">*</span></label>
-      <textarea id="supportEvidence" data-required></textarea>
-      <label for="captureEvidence">What evidence suggests agency capture? <span class="required-mark">*</span></label>
-      <textarea id="captureEvidence" data-required></textarea>
+    <section id="audit">
+      <div class="section-kicker">5 · Running the Four Audits</div>
+      <h2>Four instruments, not one</h2>
+      <table class="mini">
+        <tr><th>Lens</th><th>What It Reveals</th></tr>
+        <tr><td>Rawls</td><td>No one reasoning from behind a veil could rationally choose an arrangement where one group's survival is knowingly sacrificed to another's scientific curiosity.</td></tr>
+        <tr><td>Nozick</td><td>Enrollment through deliberate concealment is not a voluntary transaction — the very fact his framework requires was manufactured to look present while entirely absent.</td></tr>
+        <tr><td>Nussbaum</td><td>Life and bodily health, practical reason, and affiliation were all denied simultaneously.</td></tr>
+        <tr><td>Honneth</td><td>Legal recognition and social esteem were both denied at the deepest level.</td></tr>
+      </table>
+      <label for="audit_reflect">Prompt 5.1 — Why does this matter?</label>
+      <p class="hint">Tuskegee fails all four audits at once. What does that tell you about these four lenses — are they competing theories fighting for one right answer, or something else?</p>
+      <textarea id="audit_reflect" data-required="true" aria-describedby="audit_reflect_error"></textarea>
+      <p class="error-inline" id="audit_reflect_error">This still needs a response.</p>
     </section>
 
-    <section id="data">
-      <div class="section-kicker">6. Data and Model Limits</div>
-      <h2>Treat the model as an instrument, not an authority.</h2>
-      <div class="callout"><strong>Data reduction:</strong> a system may simplify people, contexts, and values into what can be measured or predicted.</div>
-      <label for="modelAssumptions">What might the model or tool be assuming? <span class="hint">(optional)</span></label>
-      <textarea id="modelAssumptions"></textarea>
-      <label for="dataReduction">What lived context or value might be reduced or missed? <span class="required-mark">*</span></label>
-      <textarea id="dataReduction" data-required></textarea>
-      <label for="needsCheck">What needs to be checked before the output is trusted or used? <span class="required-mark">*</span></label>
-      <textarea id="needsCheck" data-required></textarea>
+    <section id="bail">
+      <div class="section-kicker">6 · The Bail Hearing</div>
+      <h2>The same structure, today</h2>
+      <div class="casebox">
+        <p>A bail hearing takes twelve minutes. A man arrested on a nonviolent charge can't afford eight hundred dollars — ten percent of his eight-thousand-dollar bail. Over four months in jail awaiting trial, he loses his job, his apartment, and time with his children. He accepts a plea rather than wait longer.</p>
+      </div>
+      <label for="bail_audit">Prompt 6.1 — Run one lens on the bail hearing</label>
+      <p class="hint">Pick one of the four lenses and apply it to this case directly.</p>
+      <textarea id="bail_audit" data-required="true" aria-describedby="bail_audit_error"></textarea>
+      <p class="error-inline" id="bail_audit_error">This still needs a response.</p>
     </section>
 
-    <section id="authorship">
-      <div class="section-kicker">7. Authorship and Appeal</div>
-      <h2>Can the person stand behind the final action?</h2>
-      <label for="authorshipRisk">Where is authorship at risk? <span class="required-mark">*</span></label>
-      <textarea id="authorshipRisk" data-required></textarea>
-      <label for="responsibleRevision">What would responsible revision require? <span class="required-mark">*</span></label>
-      <textarea id="responsibleRevision" data-required></textarea>
-      <label for="appealRoute">If the tool causes harm or error, what appeal or correction route should exist? <span class="required-mark">*</span></label>
-      <textarea id="appealRoute" data-required></textarea>
-      <label for="cannotConclude">What still cannot be concluded from the information available? <span class="required-mark">*</span></label>
-      <textarea id="cannotConclude" data-required></textarea>
+    <section id="before">
+      <div class="section-kicker">7 · Before You Reason It Through</div>
+      <h2>A rule in your own institution</h2>
+      <div class="stop-box">
+        <p><strong class="stop-label">Stop — write before continuing</strong></p>
+        <p>Name one real rule in an institution you belong to that you suspect would not survive being redesigned from behind a genuine veil of ignorance. Write your honest first sense of why, before reasoning it through. Once you move on, don't come back and revise this.</p>
+      </div>
+      <label for="own_rule_first">Prompt 7.1 — Your rule and first reaction</label>
+      <textarea id="own_rule_first" data-required="true" aria-describedby="own_rule_first_error"></textarea>
+      <p class="error-inline" id="own_rule_first_error">This still needs a response.</p>
     </section>
 
-    <section id="repair">
-      <div class="section-kicker">8. Repair Route</div>
-      <h2>Choose a responsible use route.</h2>
-      <label for="responsibleUse">What would responsible use of the tool look like here? <span class="required-mark">*</span></label>
-      <textarea id="responsibleUse" data-required></textarea>
-      <label for="guardrail">What guardrail, rule, disclosure, review step, or habit would help preserve agency? <span class="required-mark">*</span></label>
-      <textarea id="guardrail" data-required></textarea>
-      <label for="smallImprovement">What would count as a small but real improvement? <span class="required-mark">*</span></label>
-      <textarea id="smallImprovement" data-required></textarea>
+    <section id="ownaudit">
+      <div class="section-kicker">8 · Run the Four-Audit on Your Own Institution</div>
+      <h2>Which lens does it fail first?</h2>
+      <label for="own_audit">Prompt 8.1 — Run the Four-Audit table on your own rule</label>
+      <p class="hint">Which of the four audits does your rule pass easily? Which one does it fail, or come closest to failing?</p>
+      <textarea id="own_audit" data-required="true" aria-describedby="own_audit_error"></textarea>
+      <p class="error-inline" id="own_audit_error">This still needs a response.</p>
+    </section>
+
+    <section id="after">
+      <div class="section-kicker">9 · After Working Through It</div>
+      <h2>Your final answer</h2>
+      <div class="stop-box">
+        <p><strong class="stop-label">Stop — write before continuing</strong></p>
+        <p>Having run the Four-Audit on your own institution, has your sense of the rule changed? What would change about it if the people who benefit most from it didn't know in advance that they would?</p>
+      </div>
+      <label for="own_rule_final">Prompt 9.1 — Your final answer</label>
+      <textarea id="own_rule_final" data-required="true" aria-describedby="own_rule_final_error"></textarea>
+      <p class="error-inline" id="own_rule_final_error">This still needs a response.</p>
+    </section>
+
+    <section id="revision">
+      <div class="section-kicker">10 · The Revision Check</div>
+      <h2>What actually changed?</h2>
+      <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
+      <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
+      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error"></textarea>
+      <p class="error-inline" id="revision_check_error">This still needs a response.</p>
+      <div class="checkline">
+        <input type="checkbox" id="journalRef">
+        <div><label for="journalRef">Optional: I explored this further in my Personal Ethics Journal.</label>
+        <span class="zero-credit">No description needed. This box is never worth points, in either direction.</span></div>
+      </div>
     </section>
 
     <section id="output">
-      <div class="section-kicker">9. Output Card</div>
-      <h2>Generate your Chapter 8 Workbook Output Card.</h2>
-      <p>Your instructor may ask you to paste this card into Canvas or download it as a file.</p>
-      <div id="alert" class="alert" role="status"></div>
+      <div class="section-kicker">11 · Output Card</div>
+      <h2>Chapter 8 Workbook Output Card</h2>
+      <div class="error-summary" id="errorSummary" tabindex="-1">
+        <h3>Please complete these items before creating the Output Card</h3>
+        <ul id="errorList"></ul>
+      </div>
       <div class="buttons">
         <button type="button" id="generateBtn">Generate Output Card</button>
         <button type="button" class="secondary" id="copyBtn">Copy Output Card</button>
-        <button type="button" class="secondary" id="downloadTxtBtn">Download Output Card</button>
-        <button type="button" class="secondary" id="downloadWorksheetBtn">Download Blank Worksheet</button>
+        <button type="button" class="secondary" id="downloadBtn">Download Output Card</button>
       </div>
-      <label for="outputCard">Chapter 8 Workbook Output Card</label>
-      <textarea id="outputCard" class="output" readonly></textarea>
-      <div class="success"><strong>Complete:</strong> You practiced auditing a tool route, distinguishing support from capture, checking authorship, and proposing a repair route.</div>
-      <h3>Suggested 10-point rubric</h3>
-      <table><thead><tr><th>Criterion</th><th>Points</th></tr></thead><tbody>
-        <tr><td>Identifies the tool, task, and intended benefit</td><td>2</td></tr>
-        <tr><td>Audits attention route: easy, visible, hidden, hard</td><td>2</td></tr>
-        <tr><td>Distinguishes tool support from agency capture</td><td>2</td></tr>
-        <tr><td>Explains model/data limits and authorship risk</td><td>2</td></tr>
-        <tr><td>Proposes a realistic responsible-use or repair route</td><td>2</td></tr>
-      </tbody></table>
+      <label for="outputText">Output Card</label>
+      <textarea id="outputText" readonly></textarea>
+      <div id="completeMsg" class="success" hidden>You've completed the Chapter 8 workbook — Tuskegee's real case in full, the Four-Audit Diagnostic applied to a historical case, a contemporary parallel, and your own institution, with an honest process trail throughout.</div>
     </section>
   </main>
 </div>
-<footer><div class="wrap">Chapter 8 Workbook v1.0 · Local-only classroom version · Ethics and Critical Thinking</div></footer>
+<footer>Chapter 8 Workbook v2.0 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
 <script>
-(function(){
+(function() {
   'use strict';
-  const storageKey = 'ebb_ch8_route_audit_workbook_v1';
-  const required = Array.from(document.querySelectorAll('[data-required]'));
-  const fields = Array.from(document.querySelectorAll('textarea, input[type="text"], select, input[type="checkbox"]'));
+  const STORAGE_KEY = 'ch8_workbook_v2_justice_recognition';
+  const requiredFields = Array.from(document.querySelectorAll('[data-required="true"]'));
+  const allFields = Array.from(document.querySelectorAll('textarea, select, input[type="checkbox"]'));
   const barFill = document.getElementById('barFill');
   const progressText = document.getElementById('progressText');
-  const alertBox = document.getElementById('alert');
-  const outputCard = document.getElementById('outputCard');
-  const labels = {
-    caseReaction:'First noticing', quickJudgmentMiss:'What a quick judgment might miss', toolName:'Tool or system', taskName:'Task', toolBenefit:'Potential benefit', makesEasy:'What the tool makes easier', makesVisible:'What the tool makes visible or tempting', makesHidden:'What the tool hides', makesHard:'What becomes harder to notice or repair', supportCaptureFinding:'Support/capture finding', supportEvidence:'Evidence of tool support', captureEvidence:'Evidence of agency capture', modelAssumptions:'Model/tool assumptions', dataReduction:'Reduced or missed context', needsCheck:'What needs checking', authorshipRisk:'Authorship risk', responsibleRevision:'Responsible revision', appealRoute:'Appeal/correction route', cannotConclude:'What still cannot be concluded', responsibleUse:'Responsible use route', guardrail:'Guardrail or review step', smallImprovement:'Small improvement'
-  };
-  function valueOf(el){ return el.type === 'checkbox' ? (el.checked ? 'Yes' : '') : (el.value || '').trim(); }
-  function updateProgress(){
-    const done = required.filter(el => valueOf(el)).length;
-    const pct = Math.round((done / required.length) * 100);
-    barFill.style.width = pct + '%';
-    progressText.textContent = pct + '% complete (' + done + ' of ' + required.length + ' required responses)';
-    save();
-  }
-  function save(){
+  const outputText = document.getElementById('outputText');
+  const completeMsg = document.getElementById('completeMsg');
+  const errorSummary = document.getElementById('errorSummary');
+  const errorList = document.getElementById('errorList');
+  const journalRef = document.getElementById('journalRef');
+
+  function isFilled(el) { if (el.type === 'checkbox') return el.checked; return (el.value || '').trim().length > 0; }
+  function valueOf(id) { const el = document.getElementById(id); if (!el) return ''; return el.type === 'checkbox' ? (el.checked ? 'Yes' : 'No') : (el.value || '').trim(); }
+  function labelFor(id) { const l = document.querySelector('label[for="'+id+'"]'); return l ? l.textContent.replace(/\s+/g,' ').trim() : id; }
+
+  function collect() {
     const data = {};
-    fields.forEach(el => { data[el.id] = el.type === 'checkbox' ? el.checked : el.value; });
-    localStorage.setItem(storageKey, JSON.stringify(data));
+    allFields.forEach(el => { data[el.id] = el.type === 'checkbox' ? el.checked : el.value; });
+    data.savedAt = new Date().toISOString();
+    return data;
   }
-  function load(){
-    try{
-      const data = JSON.parse(localStorage.getItem(storageKey) || '{}');
-      fields.forEach(el => { if(Object.prototype.hasOwnProperty.call(data, el.id)){ if(el.type === 'checkbox') el.checked = !!data[el.id]; else el.value = data[el.id]; }});
-    } catch(e) {}
-    updateProgress();
+  function saveDraft() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(collect())); } catch(e) { console.warn('Could not save draft', e); } }
+  function loadDraft() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      allFields.forEach(el => {
+        if (!(el.id in data)) return;
+        if (el.type === 'checkbox') el.checked = Boolean(data[el.id]);
+        else el.value = data[el.id];
+      });
+    } catch(e) { console.warn('Could not load draft', e); }
   }
-  function show(message, ok){
-    alertBox.textContent = message;
-    alertBox.className = 'alert show ' + (ok ? 'ok' : 'err');
+  function updateProgress() {
+    const done = requiredFields.filter(isFilled).length;
+    const total = requiredFields.length;
+    const pct = total ? Math.round((done/total)*100) : 0;
+    barFill.style.width = pct + '%';
+    progressText.textContent = done + ' of ' + total + ' required responses completed.';
+    return { done, total };
   }
-  function missingFields(){ return required.filter(el => !valueOf(el)); }
-  function buildOutput(){
-    const missing = missingFields();
-    if(missing.length){ show('Please complete all required fields before generating the Output Card. Missing: ' + missing.length, false); missing[0].focus(); return ''; }
-    const lines = [];
-    lines.push('Chapter 8 Workbook Output Card — Route Audit');
-    lines.push('Case: The AI-Written Email');
-    lines.push('');
-    Object.keys(labels).forEach(id => {
-      const el = document.getElementById(id);
-      lines.push(labels[id] + ':');
-      lines.push(valueOf(el) || '[No response]');
-      lines.push('');
-    });
-    lines.push('Completion statement: I practiced auditing how a tool routes attention, authorship, appeal, and repair.');
-    return lines.join('\n');
+  function clearErrors() {
+    errorList.innerHTML = ''; errorSummary.style.display = 'none';
+    requiredFields.forEach(el => { el.setAttribute('aria-invalid','false'); const e=document.getElementById(el.id+'_error'); if(e) e.style.display='none'; });
   }
-  function download(name, text){
+  function validate() {
+    clearErrors();
+    const missing = requiredFields.filter(el => !isFilled(el));
+    if (missing.length) {
+      missing.forEach(el => {
+        el.setAttribute('aria-invalid','true');
+        const e = document.getElementById(el.id+'_error'); if(e) e.style.display='block';
+        const li = document.createElement('li'); const a = document.createElement('a');
+        a.href = '#' + el.id; a.textContent = labelFor(el.id); li.appendChild(a); errorList.appendChild(li);
+      });
+      errorSummary.style.display = 'block'; errorSummary.focus();
+      return false;
+    }
+    return true;
+  }
+  function line(label, value) { return label + '\n' + (value || '[not completed]') + '\n'; }
+  function buildOutput() {
+    return [
+      'Chapter 8 Workbook Output Card — Justice, Recognition',
+      '',
+      line('Tuskegee — what made the deception effective:', valueOf('case_read')),
+      line('The Four Lenses — Nozick\'s own test applied:', valueOf('lenses_apply')),
+      line('Testimonial Injustice, applied to Tuskegee:', valueOf('testimonial_apply')),
+      line('Running the Four Audits — reflection:', valueOf('audit_reflect')),
+      line('The Bail Hearing — one lens applied:', valueOf('bail_audit')),
+      '',
+      line('Before you reason it through — your rule and first reaction:', valueOf('own_rule_first')),
+      line('Running the Four-Audit on your own institution:', valueOf('own_audit')),
+      line('After working through it — your final answer:', valueOf('own_rule_final')),
+      line('The Revision Check — what actually changed:', valueOf('revision_check')),
+      '',
+      'Optional Journal reference: ' + (journalRef.checked ? 'Yes' : 'No')
+    ].join('\n');
+  }
+  function download(filename, text) {
     const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    const a = document.createElement('a'); a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
   }
-  function blankWorksheet(){
-    const lines = [];
-    lines.push('Chapter 8 Workbook v1.0 — Route Audit Workbook');
-    lines.push('Case: The AI-Written Email');
-    lines.push('');
-    Object.values(labels).forEach(label => { lines.push(label + ':'); lines.push(''); lines.push(''); });
-    return lines.join('\n');
+  function worksheetText() {
+    return [
+      'Chapter 8 Workbook Worksheet v2.0 — Justice, Recognition',
+      '',
+      'Tuskegee: 1932-1972, 399 men with syphilis, 201 controls, "bad blood," penicillin withheld after 1947, Peter Buxtun\'s 1972 whistleblowing.',
+      '',
+      '1. What made the deception effective, not less, given the trust the researchers deliberately built?',
+      '',
+      '2. Apply Nozick\'s own test to Tuskegee — why can no version of his framework call the enrollment legitimate?',
+      '',
+      '3. Testimonial Injustice, applied to Tuskegee.',
+      '',
+      '4. Running the Four Audits — are these competing theories, or something else?',
+      '',
+      '5. The Bail Hearing — apply one of the four lenses directly.',
+      '',
+      '6. STOP — before continuing: name a real rule in your own institution, and your honest first sense of whether it would survive a veil of ignorance. Do not revise this after moving on.',
+      '',
+      '7. Run the Four-Audit table on your own rule. Which does it pass easily? Which does it fail?',
+      '',
+      '8. STOP — after working through it: your final answer.',
+      '',
+      '9. Revision Check — what specifically changed? If nothing changed, say so honestly.',
+      '',
+      'Optional: note here if you explored this further in your Personal Ethics Journal (not graded).'
+    ].join('\n');
   }
-  fields.forEach(el => { el.addEventListener('input', updateProgress); el.addEventListener('change', updateProgress); });
-  document.getElementById('generateBtn').addEventListener('click', () => { const text = buildOutput(); if(text){ outputCard.value = text; show('Output Card generated.', true); save(); }});
-  document.getElementById('copyBtn').addEventListener('click', async () => { const text = outputCard.value || buildOutput(); if(!text) return; outputCard.value = text; try{ await navigator.clipboard.writeText(text); show('Output Card copied.', true); } catch(e){ outputCard.select(); document.execCommand('copy'); show('Output Card selected/copied if your browser allows it.', true); }});
-  document.getElementById('downloadTxtBtn').addEventListener('click', () => { const text = outputCard.value || buildOutput(); if(text) download('chapter8_route_audit_output_card.txt', text); });
-  document.getElementById('downloadWorksheetBtn').addEventListener('click', () => download('chapter8_route_audit_blank_worksheet.txt', blankWorksheet()));
-  document.getElementById('clearBtn').addEventListener('click', () => { if(confirm('Clear saved Chapter 8 workbook responses on this device?')){ localStorage.removeItem(storageKey); fields.forEach(el => { if(el.type === 'checkbox') el.checked = false; else el.value = ''; }); outputCard.value = ''; show('Saved work cleared on this device.', true); updateProgress(); }});
-  load();
-})();
+  document.addEventListener('input', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
+  document.addEventListener('change', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
+  document.getElementById('saveBtn').addEventListener('click', () => { saveDraft(); alert('Draft saved in this browser.'); });
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear this saved Chapter 8 draft from this browser?')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    allFields.forEach(el => { if (el.type === 'checkbox') el.checked = false; else el.value = ''; });
+    outputText.value = ''; completeMsg.hidden = true; clearErrors(); updateProgress();
+  });
+  document.getElementById('generateBtn').addEventListener('click', () => {
+    if (!validate()) return;
+    outputText.value = buildOutput();
+    completeMsg.hidden = false;
+    saveDraft();
+  });
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    if (!outputText.value.trim()) outputText.value = buildOutput();
+    try { await navigator.clipboard.writeText(outputText.value); alert('Output Card copied.'); }
+    catch(e) { outputText.select(); document.execCommand('copy'); alert('Output Card selected/copied.'); }
+  });
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (!outputText.value.trim()) outputText.value = buildOutput();
+    download('chapter_8_output_card.txt', outputText.value);
+  });
+  document.getElementById('downloadWorksheet').addEventListener('click', () => {
+    download('chapter_8_workbook_worksheet.txt', worksheetText());
+  });
+  loadDraft();
+  updateProgress();
+}());
 </script>
 </body>
 </html>
