@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Chapter 8 Workbook v2.0 — Justice, Recognition</title>
+<title>Chapter 8 Workbook v2.1 — Justice, Recognition</title>
 <meta content="Accessible Chapter 8 workbook rebuilt on the finalized chapter text: the real Tuskegee case, the Four-Audit Diagnostic, Testimonial Injustice, the bail hearing, and the process trail." name="description"/>
 <style>
     :root {
@@ -47,6 +47,8 @@
     .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
     label { display:block; font-weight:800; margin:14px 0 6px; color:#273142; }
     .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
+    .response-hint { margin:8px 0 0; padding:10px 12px; background:#eaf1fa; border:1px solid #c3d6ea; border-left:4px solid var(--accent-dark); border-radius:10px; font-size:.9rem; color:#25324a; }
+    .response-hint strong { color:var(--accent-dark); }
     textarea, select { width:100%; font:inherit; color:var(--ink); background:#fff; border:1px solid #bfcbd8; border-radius:12px; padding:11px 12px; }
     textarea { min-height:104px; resize:vertical; }
     textarea:focus, select:focus, button:focus { outline:3px solid #284e7d; outline-offset:2px; }
@@ -75,7 +77,7 @@
 <header>
   <div class="wrap hero">
     <div class="hero-card">
-      <div class="eyebrow">Chapter 8 Workbook · Justice, Recognition · v2.0</div>
+      <div class="eyebrow">Chapter 8 Workbook · Justice, Recognition · v2.1</div>
       <h1>Justice, Recognition</h1>
       <p class="tagline">The real Tuskegee case, the <strong>Four-Audit Diagnostic</strong> — Rawls, Nozick, Nussbaum, Honneth — and Testimonial Injustice, with a genuine process trail.</p>
       <div class="pill-row">
@@ -97,7 +99,7 @@
     <div class="progress-box">
       <strong>Progress</strong>
       <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText" class="small">0 of 11 required responses completed.</div>
+      <div id="progressText" class="small">0 of 10 required responses completed.</div>
       <ol class="toc">
         <li><a href="#arrive">1. Arrive</a></li>
         <li><a href="#case">2. Tuskegee</a></li>
@@ -129,6 +131,12 @@
         <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
       </div>
       <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
+      <div class="callout" aria-labelledby="guidance-heading">
+        <h3 id="guidance-heading">Before You Start Typing</h3>
+        <p>The boxes in this workbook are graded responses, not a warm-up. A thin answer restates the obvious. A full answer names something specific and traceable, not a general truth that could apply to almost anything.</p>
+        <p>For example: asked why a team lost a game, a thin answer says "they didn't play well." A full answer says "their starting goalkeeper was injured in the second minute, and the backup had never practiced with that specific defensive line." Both are about the same length. Only one of them could actually be checked against what happened.</p>
+        <p>Each prompt below has a short note under it naming the specific shortcut a rushed answer tends to take on that exact question. Read it before you write, not after you get your grade back.</p>
+      </div>
     </section>
 
     <section id="case">
@@ -139,7 +147,8 @@
       </div>
       <label for="case_read">Prompt 2.1 — What made this possible?</label>
       <p class="hint">The researchers built trust deliberately — meals, burial insurance, a trusted nurse, Eunice Rivers — around a study the men never understood. Why did that trust make the deception more effective, not less?</p>
-      <textarea id="case_read" data-required="true" aria-describedby="case_read_error"></textarea>
+      <p class="response-hint" id="case_read_rhint"><strong>Watch for:</strong> answering only that "they were deceived" — that restates the setup rather than the actual question. A full answer explains specifically why building trust made the deception harder to see and challenge than if it had been present without any trust at all.</p>
+      <textarea id="case_read" data-required="true" aria-describedby="case_read_error case_read_rhint"></textarea>
       <p class="error-inline" id="case_read_error">This still needs a response.</p>
     </section>
 
@@ -154,7 +163,8 @@
       </div>
       <label for="lenses_apply">Prompt 3.1 — Apply Nozick's own test to Tuskegee</label>
       <p class="hint">Nozick's framework depends entirely on the historical transaction being voluntary. Why can no version of his framework call Tuskegee's enrollment legitimate?</p>
-      <textarea id="lenses_apply" data-required="true" aria-describedby="lenses_apply_error"></textarea>
+      <p class="response-hint" id="lenses_apply_rhint"><strong>Watch for:</strong> writing "because it wasn't voluntary" — that's the premise already stated in the question, not an answer to it. A full answer explains specifically what made the enrollment look voluntary on its face while the deliberate concealment made genuine consent impossible.</p>
+      <textarea id="lenses_apply" data-required="true" aria-describedby="lenses_apply_error lenses_apply_rhint"></textarea>
       <p class="error-inline" id="lenses_apply_error">This still needs a response.</p>
     </section>
 
@@ -164,7 +174,8 @@
       <div class="callout">Testimonial injustice: a person's account of their own experience given less credibility than it deserves because of prejudice against who they are, rather than anything wrong with the account itself.</div>
       <label for="testimonial_apply">Prompt 4.1 — Apply it to Tuskegee</label>
       <p class="hint">The men had no route by which their own reported symptoms or confusion about "bad blood" could reach anyone with power to act on it. What does this add to the four lenses that they alone might miss?</p>
-      <textarea id="testimonial_apply" data-required="true" aria-describedby="testimonial_apply_error"></textarea>
+      <p class="response-hint" id="testimonial_apply_rhint"><strong>Watch for:</strong> saying "it shows they were ignored," which restates the case rather than answering what this specific lens contributes beyond the other four. A full answer names what testimonial injustice tracks that a lens checking outcomes, capability, or recognition wouldn't automatically catch: whether the person's own account could function as evidence at all.</p>
+      <textarea id="testimonial_apply" data-required="true" aria-describedby="testimonial_apply_error testimonial_apply_rhint"></textarea>
       <p class="error-inline" id="testimonial_apply_error">This still needs a response.</p>
     </section>
 
@@ -180,7 +191,8 @@
       </table>
       <label for="audit_reflect">Prompt 5.1 — Why does this matter?</label>
       <p class="hint">Tuskegee fails all four audits at once. What does that tell you about these four lenses — are they competing theories fighting for one right answer, or something else?</p>
-      <textarea id="audit_reflect" data-required="true" aria-describedby="audit_reflect_error"></textarea>
+      <p class="response-hint" id="audit_reflect_rhint"><strong>Watch for:</strong> concluding simply "they're all correct" without saying what it means that four genuinely different criteria converge on the same case. A full answer explains what that convergence itself tells you — about this case, or about what these four lenses are actually for.</p>
+      <textarea id="audit_reflect" data-required="true" aria-describedby="audit_reflect_error audit_reflect_rhint"></textarea>
       <p class="error-inline" id="audit_reflect_error">This still needs a response.</p>
     </section>
 
@@ -192,7 +204,8 @@
       </div>
       <label for="bail_audit">Prompt 6.1 — Run one lens on the bail hearing</label>
       <p class="hint">Pick one of the four lenses and apply it to this case directly.</p>
-      <textarea id="bail_audit" data-required="true" aria-describedby="bail_audit_error"></textarea>
+      <p class="response-hint" id="bail_audit_rhint"><strong>Watch for:</strong> naming a lens and then just asserting the outcome is unjust, without actually running that lens's specific question against the facts. A full answer shows the reasoning — what that lens's actual test says applied to the $800 bail and the four months in jail, not just the verdict.</p>
+      <textarea id="bail_audit" data-required="true" aria-describedby="bail_audit_error bail_audit_rhint"></textarea>
       <p class="error-inline" id="bail_audit_error">This still needs a response.</p>
     </section>
 
@@ -204,7 +217,8 @@
         <p>Name one real rule in an institution you belong to that you suspect would not survive being redesigned from behind a genuine veil of ignorance. Write your honest first sense of why, before reasoning it through. Once you move on, don't come back and revise this.</p>
       </div>
       <label for="own_rule_first">Prompt 7.1 — Your rule and first reaction</label>
-      <textarea id="own_rule_first" data-required="true" aria-describedby="own_rule_first_error"></textarea>
+      <p class="response-hint" id="own_rule_first_rhint"><strong>Watch for:</strong> naming something too vague to actually test — "the way things are run here" — instead of one specific rule you could describe to someone unfamiliar with the place. And if you've already explained why the rule might be justified, that's not a first reaction; write the honest gut sense before you defend or attack it.</p>
+      <textarea id="own_rule_first" data-required="true" aria-describedby="own_rule_first_error own_rule_first_rhint"></textarea>
       <p class="error-inline" id="own_rule_first_error">This still needs a response.</p>
     </section>
 
@@ -213,7 +227,8 @@
       <h2>Which lens does it fail first?</h2>
       <label for="own_audit">Prompt 8.1 — Run the Four-Audit table on your own rule</label>
       <p class="hint">Which of the four audits does your rule pass easily? Which one does it fail, or come closest to failing?</p>
-      <textarea id="own_audit" data-required="true" aria-describedby="own_audit_error"></textarea>
+      <p class="response-hint" id="own_audit_rhint"><strong>Watch for:</strong> naming which lens the rule fails without saying what about the rule fails it — for instance, naming Nussbaum without saying which actual capability is denied. A full answer runs the specific test, the way the table in Section 5 does, not just names a verdict.</p>
+      <textarea id="own_audit" data-required="true" aria-describedby="own_audit_error own_audit_rhint"></textarea>
       <p class="error-inline" id="own_audit_error">This still needs a response.</p>
     </section>
 
@@ -225,7 +240,8 @@
         <p>Having run the Four-Audit on your own institution, has your sense of the rule changed? What would change about it if the people who benefit most from it didn't know in advance that they would?</p>
       </div>
       <label for="own_rule_final">Prompt 9.1 — Your final answer</label>
-      <textarea id="own_rule_final" data-required="true" aria-describedby="own_rule_final_error"></textarea>
+      <p class="response-hint" id="own_rule_final_rhint"><strong>Watch for:</strong> restating your Section 7 first reaction with more confidence, or a vague claim that the rule would "be more fair" without saying what would actually be different about it. A full answer names a specific change the rule would need if the people who benefit most from it were designing it blind to their own advantage.</p>
+      <textarea id="own_rule_final" data-required="true" aria-describedby="own_rule_final_error own_rule_final_rhint"></textarea>
       <p class="error-inline" id="own_rule_final_error">This still needs a response.</p>
     </section>
 
@@ -234,7 +250,8 @@
       <h2>What actually changed?</h2>
       <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
       <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
-      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error"></textarea>
+      <p class="response-hint" id="revision_check_rhint"><strong>Watch for:</strong> writing "nothing changed" and stopping there. That's an allowed outcome, but only when you explain specifically why your first reaction survived being tested against all four audits, not just assert that it did.</p>
+      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error revision_check_rhint"></textarea>
       <p class="error-inline" id="revision_check_error">This still needs a response.</p>
       <div class="checkline">
         <input type="checkbox" id="journalRef">
@@ -261,7 +278,7 @@
     </section>
   </main>
 </div>
-<footer>Chapter 8 Workbook v2.0 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
+<footer>Chapter 8 Workbook v2.1 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
 <script>
 (function() {
   'use strict';
@@ -353,7 +370,7 @@
   }
   function worksheetText() {
     return [
-      'Chapter 8 Workbook Worksheet v2.0 — Justice, Recognition',
+      'Chapter 8 Workbook Worksheet v2.1 — Justice, Recognition',
       '',
       'Tuskegee: 1932-1972, 399 men with syphilis, 201 controls, "bad blood," penicillin withheld after 1947, Peter Buxtun\'s 1972 whistleblowing.',
       '',
