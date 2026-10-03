@@ -1,430 +1,1071 @@
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Chapter 8 Workbook v2.1 — Justice, Recognition</title>
-<meta content="Accessible Chapter 8 workbook rebuilt on the finalized chapter text: the real Tuskegee case, the Four-Audit Diagnostic, Testimonial Injustice, the bail hearing, and the process trail." name="description"/>
-<style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ECT Chapter 8 v3 — Doing, Justice & Recognition Class Lab</title>
+    <meta name="description" content="One-class interactive Chapter 8 lab: Rawls, Nozick, Nussbaum, Honneth, testimonial injustice, Doing, EHI licensing, institutional sedimentation, and REOPEN.">
+    <style>
     :root {
-      --bg:#f5f7fb; --panel:#ffffff; --ink:#1f2430; --muted:#5a6472; --line:#d7dee8;
-      --accent:#365f91; --accent-dark:#223f63; --accent-soft:#eaf2fb;
-      --danger:#9c2d23; --good-bg:#eef7ec; --shadow:0 12px 28px rgba(22,35,55,0.10); --radius:18px;
+        --bg: #f5f7fb;
+        --panel: #fff;
+        --ink: #1f2430;
+        --muted: #5a6472;
+        --line: #d7dee8;
+        --accent: #365f91;
+        --accent2: #5c4f78;
+        --soft: #eaf2fb;
+        --soft2: #f1eef7;
+        --warm: #fff5df;
+        --good: #edf7ec;
+        --danger: #8b3329;
+        --shadow: 0 10px 26px rgba(22, 35, 55, .08)
     }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:linear-gradient(180deg,#f5f7fb 0%,#e7edf5 100%); line-height:1.55; }
-    header { background:radial-gradient(circle at top left,#f7fbff,#e4eef8 58%,#cbdbea 100%); border-bottom:1px solid #bccbdd; padding:28px 18px; }
-    .wrap { max-width:1120px; margin:0 auto; }
-    .hero { display:grid; grid-template-columns:1.6fr 0.9fr; gap:20px; align-items:stretch; }
-    .hero-card, .side-card, section { background:rgba(255,255,255,0.96); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
-    .hero-card { padding:26px; } .side-card { padding:20px; }
-    .eyebrow { text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; font-weight:800; color:var(--accent-dark); }
-    h1 { margin:8px 0 10px; font-size:clamp(2rem,4vw,3.3rem); line-height:1.05; }
-    h2 { margin-top:0; color:var(--accent-dark); font-size:1.55rem; }
-    h3 { color:var(--accent-dark); margin-bottom:8px; }
-    p { margin-top:0; }
-    .tagline { font-size:1.15rem; color:#2e3542; max-width:820px; }
-    .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .pill { display:inline-flex; align-items:center; gap:6px; border:1px solid #b9c9dc; border-radius:999px; padding:6px 10px; background:#f6fbff; font-size:.88rem; color:var(--accent-dark); font-weight:650; }
-    .grid { display:grid; grid-template-columns:260px 1fr; gap:18px; margin-top:18px; }
-    nav { position:sticky; top:12px; align-self:start; }
-    .progress-box { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; }
-    .bar { height:12px; background:#e1e7ef; border-radius:999px; overflow:hidden; margin:8px 0; }
-    .bar > div { height:100%; width:0%; background:var(--accent); transition:width 200ms ease; }
-    .toc { list-style:none; padding:0; margin:10px 0 0; }
-    .toc li { margin:6px 0; }
-    .toc a { color:var(--accent-dark); text-decoration:none; font-weight:700; font-size:.93rem; }
-    .toc a:hover, .toc a:focus { text-decoration:underline; }
-    main { display:grid; gap:18px; }
-    section { padding:22px; }
-    .section-kicker { color:var(--muted); font-weight:750; margin-bottom:6px; }
-    .callout, .warning, .success, .casebox, .stop-box { border-style:solid; border-width:1px; border-radius:14px; padding:16px; margin:14px 0; }
-    .callout { background:var(--accent-soft); border-left:5px solid var(--accent); border-color:var(--line); }
-    .warning { background:#fff5df; border-left:5px solid #7a4f00; border-color:#e9d6a6; }
-    .success { background:var(--good-bg); border-left:5px solid #4d7e46; border-color:#c9e0c4; }
-    .casebox { background:#f9fbfe; border-color:#cfddea; }
-    .stop-box { background:#fff0ee; border:2px solid var(--danger); }
-    .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
-    label { display:block; font-weight:800; margin:14px 0 6px; color:#273142; }
-    .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
-    .response-hint { margin:8px 0 0; padding:10px 12px; background:#eaf1fa; border:1px solid #c3d6ea; border-left:4px solid var(--accent-dark); border-radius:10px; font-size:.9rem; color:#25324a; }
-    .response-hint strong { color:var(--accent-dark); }
-    textarea, select { width:100%; font:inherit; color:var(--ink); background:#fff; border:1px solid #bfcbd8; border-radius:12px; padding:11px 12px; }
-    textarea { min-height:104px; resize:vertical; }
-    textarea:focus, select:focus, button:focus { outline:3px solid #284e7d; outline-offset:2px; }
-    textarea[aria-invalid="true"], select[aria-invalid="true"] { border-color:var(--danger); background:#fff5f4; }
-    .checkline { display:flex; gap:10px; align-items:flex-start; margin:12px 0; padding:12px; background:#f6fbff; border:1px solid #b9c9dc; border-radius:12px; }
-    .checkline input { margin-top:5px; }
-    .zero-credit { display:block; margin-top:4px; color:var(--muted); font-weight:500; font-size:.88rem; }
-    .buttons { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-    button { border:1px solid var(--accent-dark); border-radius:999px; background:var(--accent); color:#fff; padding:10px 14px; font:inherit; font-weight:800; cursor:pointer; }
-    button.secondary { background:#fff; color:var(--accent-dark); }
-    button.danger { background:var(--danger); border-color:#7b1f15; }
-    button:hover { filter:brightness(0.97); }
-    .small { font-size:.9rem; color:var(--muted); }
-    .error-inline { display:none; margin-top:6px; color:var(--danger); font-weight:700; font-size:.92rem; }
-    .error-summary { display:none; background:#fff5f3; border:2px solid var(--danger); border-radius:14px; padding:14px 16px; margin:14px 0; }
-    .error-summary h3 { color:var(--danger); margin-bottom:6px; }
-    #outputText { min-height:340px; font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9rem; }
-    footer { padding:24px 18px 40px; color:var(--muted); text-align:center; }
-    table.mini { width:100%; border-collapse:collapse; margin:12px 0; font-size:.9rem; }
-    table.mini th, table.mini td { border:1px solid #d7dee8; padding:8px; text-align:left; vertical-align:top; }
-    table.mini th { background:#edf3fa; }
-    @media (max-width:860px) { .hero,.grid { grid-template-columns:1fr; } nav { position:static; } }
-  </style>
+
+    * {
+        box-sizing:border-box
+    }
+
+    html {
+        scroll-behavior:smooth
+    }
+
+    body {
+        margin: 0;
+        font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: linear-gradient(#f7f9fc, #e7edf5)
+    }
+
+    a {
+        color:#274f79
+    }
+
+    button, textarea, select, input {
+        font:inherit
+    }
+
+    button:focus, textarea:focus, select:focus, input:focus, summary:focus, a:focus {
+        outline: 3px solid #183a61;
+        outline-offset: 2px
+    }
+
+    .wrap {
+        max-width: 1180px;
+        margin: auto;
+        padding:0 18px
+    }
+
+    header {
+        border-bottom: 1px solid #bccbdd;
+        background:linear-gradient(135deg, #f4f9ff, #e8eef7)
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1.55fr .85fr;
+        gap: 18px;
+        padding-top: 24px;
+        padding-bottom: 22px
+    }
+
+    .card, section, nav {
+        background: rgba(255, 255, 255, .98);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow:var(--shadow)
+    }
+
+    .card, section {
+        padding:22px
+    }
+
+    .eyebrow, .kicker, .phase {
+        font-weight: 850;
+        text-transform: uppercase;
+        letter-spacing:.065em
+    }
+
+    .eyebrow, .kicker {
+        font-size: .78rem;
+        color:#294d78
+    }
+
+    .phase {
+        font-size: .75rem;
+        display: inline-block;
+        background: var(--soft2);
+        color: #43375e;
+        border-radius: 999px;
+        padding: 4px 9px;
+        margin-bottom: 8px
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4vw, 3.15rem);
+        line-height: 1.05;
+        margin:8px 0
+    }
+
+    h2, h3 {
+        color:#294d78
+    }
+
+    .tagline {
+        font-size:1.08rem
+    }
+
+    .pill {
+        display: inline-block;
+        border: 1px solid #b9c9dc;
+        background: #f8fbff;
+        border-radius: 999px;
+        padding: 5px 9px;
+        margin: 3px;
+        font-size: .84rem;
+        font-weight: 760
+    }
+
+    .layout {
+        display: grid;
+        grid-template-columns: 270px 1fr;
+        gap: 18px;
+        padding-top: 18px;
+        padding-bottom:32px
+    }
+
+    nav {
+        padding: 16px;
+        position: sticky;
+        top: 10px;
+        align-self: start;
+        max-height: calc(100vh - 20px);
+        overflow:auto
+    }
+
+    .toc {
+        list-style: none;
+        padding:0
+    }
+
+    .toc li {
+        margin:7px 0
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: #294d78;
+        font-weight: 760;
+        font-size: .91rem
+    }
+
+    .bar {
+        height: 11px;
+        border-radius: 99px;
+        background: #e1e7ef;
+        overflow:hidden
+    }
+
+    .bar div {
+        height: 100%;
+        width: 0;
+        background:var(--accent)
+    }
+
+    .small {
+        font-size: .9rem;
+        color:var(--muted)
+    }
+
+    label {
+        display: block;
+        font-weight: 780;
+        margin:13px 0 5px
+    }
+
+    textarea, select, input[type=text] {
+        width: 100%;
+        padding: 9px 11px;
+        border: 1px solid #bfcbd8;
+        border-radius: 11px;
+        background:#fff
+    }
+
+    textarea {
+        min-height: 84px;
+        resize: vertical
+    }
+
+    .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:14px
+    }
+
+    .four {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:12px
+    }
+
+    .case, .callout, .warning, .success, .snapshot, .board, .modebox, .firewall, .doing, .history {
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 14px;
+        margin:13px 0
+    }
+
+    .case {
+        background:#f9fbfe
+    }
+
+    .callout {
+        background: var(--soft);
+        border-left:5px solid var(--accent)
+    }
+
+    .warning {
+        background: var(--warm);
+        border-left:5px solid #8a5f00
+    }
+
+    .success {
+        background: var(--good);
+        border-left:5px solid #4c7c46
+    }
+
+    .snapshot {
+        background: #f3f6fa;
+        border-style: dashed;
+        white-space: pre-wrap;
+        font:14px/1.45 ui-monospace, monospace
+    }
+
+    .board {
+        background: #f1eef7;
+        border-left:5px solid var(--accent2)
+    }
+
+    .firewall {
+        background: #fff0ee;
+        border-left:5px solid var(--danger)
+    }
+
+    .doing {
+        background: #eef5ef;
+        border-left:5px solid #53744d
+    }
+
+    .history {
+        background: #f7f2eb;
+        border-left: 5px solid #7b6247
+    }
+
+    .buttons {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top:14px
+    }
+
+    button {
+        font: inherit;
+        font-weight: 800;
+        border: 1px solid #294d78;
+        background: var(--accent);
+        color: white;
+        border-radius: 999px;
+        padding: 9px 14px;
+        cursor: pointer;
+        min-height:44px
+    }
+
+    button.secondary {
+        background: white;
+        color:#294d78
+    }
+
+    button.danger {
+        background: var(--danger);
+        border-color:var(--danger)
+    }
+
+    button:disabled {
+        opacity: .55;
+        cursor: not-allowed
+    }
+
+    .lens {
+        border: 1px solid #c8d5e3;
+        border-radius: 13px;
+        padding: 13px;
+        background:#fbfdff
+    }
+
+    .lens strong {
+        color:#294d78
+    }
+
+    .matrix {
+        width: 100%;
+        border-collapse: collapse;
+        margin:12px 0
+    }
+
+    .matrix th, .matrix td {
+        border: 1px solid var(--line);
+        padding: 8px;
+        vertical-align: top;
+        text-align:left
+    }
+
+    .matrix th {
+        background:#edf3fa
+    }
+
+    .move {
+        display: inline-block;
+        border: 1px solid #bfcbd8;
+        border-radius: 999px;
+        padding: 5px 9px;
+        font-weight: 800;
+        margin: 3px;
+        background:#fff
+    }
+
+    .hidden {
+        display:none !important
+    }
+
+    .output {
+        min-height: 330px;
+        font:13.5px/1.45 ui-monospace, monospace
+    }
+
+    .status {
+        font-weight: 760;
+        color:#294d78
+    }
+
+    .check {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        padding: 8px 10px;
+        border: 1px solid #d7dee8;
+        border-radius: 10px;
+        background: #fbfdff;
+        margin:7px 0
+    }
+
+    .check input {
+        margin-top:5px
+    }
+
+    .stepnum {
+        font-size: 2.2rem;
+        line-height: 1;
+        font-weight: 900;
+        color: #c5d4e4;
+        float:right
+    }
+
+    .role {
+        padding: 10px;
+        border: 1px solid #d7dee8;
+        border-radius: 10px;
+        background:#fff
+    }
+
+    .instructor-strip {
+        border: 2px dashed #6e82a0;
+        background: #f7faff;
+        border-radius: 13px;
+        padding: 12px;
+        margin:12px 0
+    }
+
+    .route {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+        margin:12px 0
+    }
+
+    .route span {
+        border: 1px solid #bfcbd8;
+        background: #fff;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-weight:800
+    }
+
+    .arrow {
+        border: 0 !important;
+        background: transparent !important;
+        padding: 6px 2px !important
+    }
+
+    @media (max-width: 900px) {
+        .hero, .layout, .two, .four {
+            grid-template-columns:1fr
+        }
+
+        nav {
+            position: static;
+            max-height: none
+        }
+    }
+
+    @media (max-width: 520px) {
+        section, .card {
+            padding: 16px
+        }
+    }
+
+    @media print {
+        nav, .buttons, .modebox, .instructor-strip {
+            display:none !important
+        }
+
+        body {
+            background:white
+        }
+
+        .card, section {
+            box-shadow: none
+        }
+    }
+    </style>
 </head>
 <body>
-<header>
-  <div class="wrap hero">
-    <div class="hero-card">
-      <div class="eyebrow">Chapter 8 Workbook · Justice, Recognition · v2.1</div>
-      <h1>Justice, Recognition</h1>
-      <p class="tagline">The real Tuskegee case, the <strong>Four-Audit Diagnostic</strong> — Rawls, Nozick, Nussbaum, Honneth — and Testimonial Injustice, with a genuine process trail.</p>
-      <div class="pill-row">
-        <span class="pill">Case: Tuskegee Syphilis Study</span>
-        <span class="pill">The Four-Audit Diagnostic</span>
-        <span class="pill">Testimonial Injustice</span>
-      </div>
+    <header>
+        <div class="wrap hero">
+            <div class="card">
+                <div class="eyebrow">Ethics & Critical Thinking · Unit 3 · Chapter 8 · One-Class Conversation Lab</div>
+                <h1>Justice, Recognition, and the Institutional Maps We Inherit</h1>
+                <p class="tagline">
+                    <strong>See the rule as a Doing → preserve your first map → audit it four ways → restore voice and recognition → license the move from record to authorized action → return as author.</strong>
+                </p>
+                <span class="pill">Rawls</span>
+                <span class="pill">Nozick</span>
+                <span class="pill">Nussbaum</span>
+                <span class="pill">Honneth</span>
+                <span class="pill">Testimonial injustice</span>
+                <span class="pill">Doing</span>
+                <span class="pill">EHI licensing</span>
+                <span class="pill">REOPEN</span>
+            </div>
+            <div class="card">
+                <h2>One class, two paths</h2>
+                <p>
+                    <strong>Live class:</strong>
+                     begin alone, then work in groups of 3–4 through the audits and evidence-channel discussion. Preserve disagreement.
+                </p>
+                <p>
+                    <strong>Individual/self-paced:</strong>
+                     run the same sequence by constructing the strongest reasonable alternative map yourself.
+                </p>
+                <p class="small">Suggested class: 65–75 minutes. The main case is fictional and low-stakes; no private disclosure is required.</p>
+            </div>
+        </div>
+    </header>
+    <div class="wrap layout">
+        <nav aria-label="Chapter 8 class lab navigation">
+            <strong>Session setup</strong>
+            <label for="workMode">How are you working?</label>
+            <select id="workMode">
+                <option value="group">Pair / group (2–4)</option>
+                <option value="individual">Individual / self-paced</option>
+            </select>
+            <div class="modebox small" id="modeNote"></div>
+            <strong>Progress</strong>
+            <div class="bar" aria-hidden="true">
+                <div id="barFill"></div>
+            </div>
+            <div class="small" id="progressText"></div>
+            <div class="warning" id="mapAStatus">Map A not yet preserved</div>
+            <ol class="toc">
+                <li>
+                    <a href="#orient">0. ORIENT — Justice as a system</a>
+                </li>
+                <li>
+                    <a href="#enter">1. ENTER — Map A</a>
+                </li>
+                <li>
+                    <a href="#doing">2. MAP THE DOING</a>
+                </li>
+                <li>
+                    <a href="#audits">3. FOUR AUDITS</a>
+                </li>
+                <li>
+                    <a href="#voice">4. VOICE + RECOGNITION</a>
+                </li>
+                <li>
+                    <a href="#history">5. HISTORICAL PRESSURE TEST</a>
+                </li>
+                <li>
+                    <a href="#license">6. LICENSE — Firewall</a>
+                </li>
+                <li>
+                    <a href="#return">7. RETURN — Map B</a>
+                </li>
+                <li>
+                    <a href="#transfer">8. TRANSFER</a>
+                </li>
+                <li>
+                    <a href="#close">9. CARRY FORWARD</a>
+                </li>
+            </ol>
+            <div class="buttons">
+                <button class="secondary" id="saveBtn">Save</button>
+                <button class="danger" id="clearBtn">Clear local work</button>
+            </div>
+        </nav>
+        <main>
+            <section id="orient">
+                <span class="stepnum">0</span>
+                <div class="phase">Instructor opening · 4–6 min</div>
+                <div class="kicker">ORIENT — Chapter 8 after the reading</div>
+                <h2>A rule does more than state a rule</h2>
+                <p>
+                    You already know the simple Chapter 8 task: justice asks whether the structures people live under can be justified, while recognition asks whether people are treated as persons whose standing, capabilities, histories, and voices count. Today we treat an institution as an ongoing 
+                    <strong>Doing</strong>
+                    .
+                </p>
+                <div class="doing">
+                    <strong>Doing language:</strong>
+                     an institutional rule has an assembly history, present procedures and capacities, and forward effects. Once sedimented into forms, databases, software, habits, and authority, it can shape what later agents notice, what counts as evidence, and what future options remain open.
+                </div>
+                <div class="firewall">
+                    <strong>Today's critical-thinking problem:</strong>
+                     a record can support an administrative claim, but it does not automatically establish a just decision. 
+                    <strong>Record ≠ whole situation. Rule compliance ≠ justice. Administrative authority ≠ unreviewable authority.</strong>
+                </div>
+                <div class="instructor-strip">
+                    <strong>Opening question:</strong>
+                     “If a rule is applied exactly the same way to everyone, is that enough to make it fair?” Take 2–3 answers without resolving them.
+                </div>
+            </section>
+
+            <section id="enter">
+                <span class="stepnum">1</span>
+                <div class="phase">Individual first · 5–6 min</div>
+                <div class="kicker">ENTER — Preserve the first map</div>
+                <h2>The Registration Hold</h2>
+                <div class="case">
+                    <p>A college automatically blocks registration when a student's unpaid balance is more than $500. The rule is intended to make payment expectations clear and keep the college financially stable.</p>
+                    <p>Maya has a $650 balance when registration opens. The system places a hold on her account, so she cannot register for next semester.</p>
+                    <p>
+                        <strong>For now, assume only those facts.</strong>
+                    </p>
+                </div>
+                <label for="a_judgment">Right now, how fair does the rule seem in Maya's case?</label>
+                <select id="a_judgment" data-required="true">
+                    <option value="">Choose…</option>
+                    <option>Fair as applied</option>
+                    <option>Reasonable rule, but this case may need an exception or review</option>
+                    <option>Probably unfair as applied</option>
+                    <option>Not enough information yet</option>
+                </select>
+                <label for="a_reason">What is the strongest reason for your first judgment?</label>
+                <textarea id="a_reason" data-required="true"></textarea>
+                <div class="two">
+                    <div>
+                        <label for="a_visible">What does the institutional map currently make visible?</label>
+                        <textarea id="a_visible" data-required="true"></textarea>
+                    </div>
+                    <div>
+                        <label for="a_missing">What might still be missing from that map?</label>
+                        <textarea id="a_missing" data-required="true"></textarea>
+                    </div>
+                </div>
+                <label for="a_unknown">What would you need to know before making a stronger judgment?</label>
+                <textarea id="a_unknown" data-required="true"></textarea>
+                <div class="buttons">
+                    <button id="sealBtn">Preserve Map A</button>
+                    <button class="secondary" id="unsealBtn">Reset for technical error</button>
+                </div>
+                <div id="snapshotA" class="snapshot hidden"></div>
+            </section>
+
+            <section id="doing">
+                <span class="stepnum">2</span>
+                <div class="phase">Conversation setup · 6–7 min</div>
+                <div class="kicker">MAP THE DOING — What is the institution actually doing?</div>
+                <h2>From a rule to a task space</h2>
+                <div class="board">
+                    <strong>Conversation rule:</strong>
+                     do not start by deciding whether the college is good or bad. Trace the system. A rule becomes ethically important partly through what it allows, blocks, records, ignores, and makes hard to challenge.
+                </div>
+                <div class="four">
+                    <div class="role">
+                        <strong>Mapper</strong>
+                        <br>
+                        <span class="small">Trace record → classification → action.</span>
+                    </div>
+                    <div class="role">
+                        <strong>Auditor</strong>
+                        <br>
+                        <span class="small">Ask which fairness test is relevant.</span>
+                    </div>
+                    <div class="role">
+                        <strong>Voice-keeper</strong>
+                        <br>
+                        <span class="small">Ask whose account can enter as evidence.</span>
+                    </div>
+                    <div class="role">
+                        <strong>License-keeper</strong>
+                        <br>
+                        <span class="small">Ask what justifies each transition.</span>
+                    </div>
+                </div>
+                <p class="small" id="roleNote"></p>
+                <label for="doing_route">Trace the institutional Doing in one line: what record triggers what classification, which then triggers what action?</label>
+                <textarea id="doing_route" data-required="true"></textarea>
+                <label for="doing_future">What future possibility does the hold immediately narrow or close for Maya?</label>
+                <textarea id="doing_future" data-required="true"></textarea>
+                <label for="doing_sediment">What earlier human decision has become “automatic” here because it is now sedimented into a rule or system?</label>
+                <textarea id="doing_sediment" data-required="true"></textarea>
+            </section>
+
+            <section id="audits">
+                <span class="stepnum">3</span>
+                <div class="phase">Group jigsaw / solo audit · 14–16 min</div>
+                <div class="kicker">FOUR AUDITS — Different questions, one institutional Doing</div>
+                <h2>Do not vote on the theories; use them as instruments</h2>
+                <div class="four">
+                    <div class="lens">
+                        <strong>Rawls — Position Audit</strong>
+                        <p>Would you accept the rule if you did not know which position you would occupy? How does it treat those with the least room to absorb the burden?</p>
+                    </div>
+                    <div class="lens">
+                        <strong>Nozick — History Audit</strong>
+                        <p>Was the transaction/history that produced the present claim legitimate and genuinely voluntary? What matters about how the balance arose?</p>
+                    </div>
+                    <div class="lens">
+                        <strong>Nussbaum — Capability Audit</strong>
+                        <p>What substantive capability does the person actually retain or lose? A formal right is not the same as a real ability to act.</p>
+                    </div>
+                    <div class="lens">
+                        <strong>Honneth — Recognition Audit</strong>
+                        <p>Is the person treated as a rights-bearing participant with standing, or reduced to a status/category that erases social and personal recognition?</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <strong>Instructor reveal:</strong>
+                     Maya's balance exists because her financial aid was delayed during a college verification review. She has already completed the requested paperwork. If she cannot register this week, a required course may fill and delay graduation by a semester.
+                </div>
+                <label for="rawls">Rawls: what does this reveal or question?</label>
+                <textarea id="rawls" data-required="true"></textarea>
+                <label for="nozick">Nozick: what does the history of the balance add?</label>
+                <textarea id="nozick" data-required="true"></textarea>
+                <label for="nussbaum">Nussbaum: what actual capability is at stake?</label>
+                <textarea id="nussbaum" data-required="true"></textarea>
+                <label for="honneth">Honneth: what would recognition require that a balance code alone cannot provide?</label>
+                <textarea id="honneth" data-required="true"></textarea>
+                <div class="board">
+                    <strong>Conversation checkpoint:</strong>
+                     Where do the four audits converge? Where do they ask genuinely different questions? Convergence strengthens the diagnosis of this case; it does not make the four theories identical.
+                </div>
+                <label for="audit_compare">Record one convergence and one important difference among the audits.</label>
+                <textarea id="audit_compare" data-required="true"></textarea>
+            </section>
+
+            <section id="voice">
+                <span class="stepnum">4</span>
+                <div class="phase">Recognition + evidence channel · 9–10 min</div>
+                <div class="kicker">VOICE — Can Maya's account function as evidence?</div>
+                <h2>Recognition is partly about whether the system can hear</h2>
+                <div class="callout">
+                    <strong>New information:</strong>
+                     Maya contacted the billing office twice and explained that the college's own verification process delayed her aid. The account screen still says only 
+                    <em>Balance due: $650</em>
+                    . At the counter she is told, “Everyone has a reason. The system won't let me remove the hold.” The formal appeal will be reviewed after registration closes.
+                </div>
+                <div class="callout">
+                    <strong>Testimonial injustice:</strong>
+                     a person's account is given less credibility than it deserves because of prejudice or status rather than because the account itself is defective. In EHI terms, we can ask a more general question too: 
+                    <em>does this person's account have a legitimate route into the evidence used by the decision process?</em>
+                </div>
+                <div class="warning">
+                    <strong>Claim ceiling:</strong>
+                     giving Maya testimonial standing does not mean her account must automatically control the decision. It means her account must be able to enter the inquiry as evidence and receive appropriate evaluation.
+                </div>
+                <label for="voice_evidence">What information does Maya possess that the institutional record does not currently contain?</label>
+                <textarea id="voice_evidence" data-required="true"></textarea>
+                <label for="voice_channel">Where exactly does the evidence channel fail: access, credibility, timing, authority, or something else?</label>
+                <textarea id="voice_channel" data-required="true"></textarea>
+                <label for="voice_repair">What would a minimally adequate recognition/appeal route need to do before the hold produces an irreversible consequence?</label>
+                <textarea id="voice_repair" data-required="true"></textarea>
+            </section>
+
+            <section id="history">
+                <span class="stepnum">5</span>
+                <div class="phase">Historical pressure test · 6–8 min</div>
+                <div class="kicker">TUSKEGEE — Why trust can deepen injustice</div>
+                <h2>Use the history to pressure-test the architecture</h2>
+                <div class="history">
+                    <p>In the Chapter 8 workbook, the Tuskegee case is used to show how deception, institutional authority, and deliberately cultivated trust could work together. The men were told they were being treated for “bad blood”; the workbook emphasizes that the structure denied genuine consent and blocked their own experience from functioning effectively as evidence within the system.</p>
+                    <p>
+                        <strong>Do not treat Maya's case as “the same as Tuskegee.”</strong>
+                         The point of comparison is structural: what happens when institutional maps, authority, and evidence channels make affected people unable to challenge the representation being used to govern them?
+                    </p>
+                </div>
+                <label for="history_pressure">Which element from today's architecture is indispensable for understanding why Tuskegee was not merely “a bad outcome”: history/consent, capability, recognition, testimonial standing, or something else? Explain briefly.</label>
+                <textarea id="history_pressure" data-required="true"></textarea>
+            </section>
+
+            <section id="license">
+                <span class="stepnum">6</span>
+                <div class="phase">EHI critical-thinking seam · 9–10 min</div>
+                <div class="kicker">LICENSE — Where does the reasoning jump?</div>
+                <h2>From database record to authorized institutional action</h2>
+                <div class="route" aria-label="Institutional decision route">
+                    <span>Record</span>
+                    <span class="arrow">→</span>
+                    <span>Classification</span>
+                    <span class="arrow">→</span>
+                    <span>Rule</span>
+                    <span class="arrow">→</span>
+                    <span>Recommendation</span>
+                    <span class="arrow">→</span>
+                    <span>Authorization</span>
+                    <span class="arrow">→</span>
+                    <span>Action</span>
+                </div>
+                <div class="firewall">
+                    <strong>Motivated firewalls:</strong>
+                    <strong>record ≠ whole situation</strong>
+                    ; 
+                    <strong>formal equality ≠ equal capability</strong>
+                    ; 
+                    <strong>policy compliance ≠ justice</strong>
+                    ; 
+                    <strong>testimony ≠ automatic truth, but it may have standing as evidence</strong>
+                    ; 
+                    <strong>administrative authority ≠ unreviewable authority</strong>
+                    .
+                </div>
+                <label for="jump">Name one tempting jump in Maya's case that moves too quickly.</label>
+                <textarea id="jump" data-required="true"></textarea>
+                <label for="bridge">What additional evidence, fairness test, standing check, or appeal condition would license that move more responsibly?</label>
+                <textarea id="bridge" data-required="true"></textarea>
+                <label for="standing">Who should have standing at the recommendation/authorization stage, and why?</label>
+                <textarea id="standing" data-required="true"></textarea>
+                <div class="instructor-strip">
+                    <strong>Whole-class board:</strong>
+                     write three columns: 
+                    <em>System knows / Maya knows / Decision-maker still needs</em>
+                    . Ask whether the missing information is a data problem, a standing problem, a timing problem, a rule-design problem—or several at once.
+                </div>
+            </section>
+
+            <section id="return">
+                <span class="stepnum">7</span>
+                <div class="phase">Individual return · 6–7 min</div>
+                <div class="kicker">RETURN — Map B + Authorial Return</div>
+                <h2>Return to the same institutional Doing at higher resolution</h2>
+                <div id="returnSnapshot" class="snapshot hidden"></div>
+                <label for="b_judgment">How do you now judge the registration-hold rule in Maya's case?</label>
+                <select id="b_judgment" data-required="true">
+                    <option value="">Choose…</option>
+                    <option>Fair as applied</option>
+                    <option>Legitimate goal, but the rule needs a timely review/exception path</option>
+                    <option>Probably unjust as applied</option>
+                    <option>Not enough information yet</option>
+                </select>
+                <label for="b_reason">What carries the most weight in your judgment now?</label>
+                <textarea id="b_reason" data-required="true"></textarea>
+                <label for="b_change">What changed from Map A: conclusion, reasons, confidence, or the question you think matters?</label>
+                <textarea id="b_change" data-required="true"></textarea>
+                <div class="two">
+                    <div>
+                        <label for="b_ceiling">Claim ceiling — what can you still not responsibly conclude?</label>
+                        <textarea id="b_ceiling" data-required="true"></textarea>
+                    </div>
+                    <div>
+                        <label for="b_reopen">REOPEN — what new evidence or consequence would make you revise?</label>
+                        <textarea id="b_reopen" data-required="true"></textarea>
+                    </div>
+                </div>
+                <label for="authorship_return">Authorial Return: “There I am” or “No, you lost me.” Which better describes your Map B, and why?</label>
+                <textarea id="authorship_return" data-required="true"></textarea>
+            </section>
+
+            <section id="transfer">
+                <span class="stepnum">8</span>
+                <div class="phase">Independent transfer · 6–8 min</div>
+                <div class="kicker">TRANSFER — A bail decision</div>
+                <h2>Can you carry the architecture into a different institution?</h2>
+                <div class="case">A person arrested on a nonviolent charge is assigned bail that requires $800 cash to secure release. They cannot pay it. While awaiting trial, they risk losing work, housing, and time with their children. The hearing is brief, and the decision-maker has little information about those consequences.</div>
+                <label for="transfer_analysis">In 4–6 sentences: run at least two of the four audits, identify one recognition/testimony problem, and name one EHI license or firewall that matters before the institution acts.</label>
+                <textarea id="transfer_analysis" data-required="true"></textarea>
+                <div class="buttons">
+                    <button id="captureTransferBtn">Capture first pass + reveal self-check</button>
+                    <button class="secondary" id="resetTransferBtn">Reset capture</button>
+                </div>
+                <div id="transferSnapshot" class="snapshot hidden"></div>
+                <div id="selfCheck" class="hidden">
+                    <label class="check">
+                        <input type="checkbox" id="sc1">
+                        Used the actual question of at least two audits
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc2">
+                        Tracked a capability or future-possibility effect
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc3">
+                        Asked whose account can enter as evidence
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc4">
+                        Separated rule application from justice
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc5">
+                        Named a review/appeal/standing condition
+                    </label>
+                </div>
+            </section>
+
+            <section id="close">
+                <span class="stepnum">9</span>
+                <div class="phase">Carry forward · 4 min</div>
+                <div class="kicker">CLOSE — Compact the chapter</div>
+                <h2>What does a just institutional map have to preserve?</h2>
+                <label for="carry">Complete this in your own words: “A fair rule is not enough if the institution's map cannot ___.”</label>
+                <textarea id="carry" data-required="true"></textarea>
+                <label for="discussion">One question you think the class still has not settled</label>
+                <textarea id="discussion"></textarea>
+                <div id="validation" class="callout status">Generate the class note when you are ready.</div>
+                <div class="buttons">
+                    <button id="generateBtn">Generate Chapter 8 Class Note</button>
+                    <button class="secondary" id="copyBtn">Copy</button>
+                    <button class="secondary" id="downloadBtn">Download .txt</button>
+                </div>
+                <label for="output">Chapter 8 class note</label>
+                <textarea id="output" class="output" readonly></textarea>
+            </section>
+        </main>
     </div>
-    <aside class="side-card">
-      <h2>What this workbook does</h2>
-      <p><strong>Ethics skill:</strong> Test a structure for fairness using four genuinely different lenses at once.</p>
-      <p><strong>Output:</strong> A Chapter 8 Workbook Output Card.</p>
-      <p class="small">Estimated time: 30–40 minutes.</p>
-    </aside>
-  </div>
-</header>
-<div class="wrap grid">
-  <nav aria-label="Workbook progress">
-    <div class="progress-box">
-      <strong>Progress</strong>
-      <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText" class="small">0 of 10 required responses completed.</div>
-      <ol class="toc">
-        <li><a href="#arrive">1. Arrive</a></li>
-        <li><a href="#case">2. Tuskegee</a></li>
-        <li><a href="#fourlenses">3. The Four Lenses</a></li>
-        <li><a href="#testimonial">4. Testimonial Injustice</a></li>
-        <li><a href="#audit">5. Running the Four Audits</a></li>
-        <li><a href="#bail">6. The Bail Hearing</a></li>
-        <li><a href="#before">7. Before You Reason It Through</a></li>
-        <li><a href="#ownaudit">8. Run the Four-Audit on Your Own Institution</a></li>
-        <li><a href="#after">9. After Working Through It</a></li>
-        <li><a href="#revision">10. The Revision Check</a></li>
-        <li><a href="#output">11. Output Card</a></li>
-      </ol>
-      <div class="buttons">
-        <button type="button" class="secondary" id="downloadWorksheet">Download worksheet</button>
-        <button type="button" class="secondary" id="saveBtn">Save now</button>
-        <button type="button" class="danger" id="clearBtn">Clear my responses</button>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <section id="arrive">
-      <div class="section-kicker">1 · Arrive</div>
-      <h2>Designing the rules before you know your seat</h2>
-      <p>Before anyone has picked a room, roommates splitting an apartment reason differently about rent than they would once they know which room is theirs. This chapter takes that instinct to the scale of an entire institution's rules.</p>
-      <div class="warning"><strong>Privacy:</strong> Section 7 asks about a real rule in an institution you're part of. Use a real one if comfortable, or keep it general.</div>
-      <div class="checkline">
-        <input type="checkbox" id="privacyAck" data-required="true" aria-describedby="privacyAck_error">
-        <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
-      </div>
-      <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
-      <div class="callout" aria-labelledby="guidance-heading">
-        <h3 id="guidance-heading">Before You Start Typing</h3>
-        <p>The boxes in this workbook are graded responses, not a warm-up. A thin answer restates the obvious. A full answer names something specific and traceable, not a general truth that could apply to almost anything.</p>
-        <p>For example: asked why a team lost a game, a thin answer says "they didn't play well." A full answer says "their starting goalkeeper was injured in the second minute, and the backup had never practiced with that specific defensive line." Both are about the same length. Only one of them could actually be checked against what happened.</p>
-        <p>Each prompt below has a short note under it naming the specific shortcut a rushed answer tends to take on that exact question. Read it before you write, not after you get your grade back.</p>
-      </div>
-    </section>
-
-    <section id="case">
-      <div class="section-kicker">2 · Tuskegee</div>
-      <h2>1932–1972</h2>
-      <div class="casebox">
-        <p>From 1932 to 1972, the U.S. Public Health Service enrolled 399 Black men who had syphilis and 201 men without it, telling them they were being treated for "bad blood." They were never told they had syphilis and never treated. When penicillin became the standard treatment in 1947, researchers withheld it — and coordinated with draft boards to prevent participants from receiving it as military inductees. The study continued 25 more years, ending only in 1972 when whistleblower Peter Buxtun leaked it to the press.</p>
-      </div>
-      <label for="case_read">Prompt 2.1 — What made this possible?</label>
-      <p class="hint">The researchers built trust deliberately — meals, burial insurance, a trusted nurse, Eunice Rivers — around a study the men never understood. Why did that trust make the deception more effective, not less?</p>
-      <p class="response-hint" id="case_read_rhint"><strong>Watch for:</strong> answering only that "they were deceived" — that restates the setup rather than the actual question. A full answer explains specifically why building trust made the deception harder to see and challenge than if it had been present without any trust at all.</p>
-      <textarea id="case_read" data-required="true" aria-describedby="case_read_error case_read_rhint"></textarea>
-      <p class="error-inline" id="case_read_error">This still needs a response.</p>
-    </section>
-
-    <section id="fourlenses">
-      <div class="section-kicker">3 · The Four Lenses</div>
-      <h2>Four different questions about fairness</h2>
-      <div class="callout">
-        <strong>Rawls:</strong> Would this rule survive being chosen by someone who didn't yet know which position they'd occupy? (The difference principle: inequality is just only if it benefits the worst off.)<br><br>
-        <strong>Nozick:</strong> Was the historical transaction that produced this outcome actually voluntary and legitimate? (His example: a basketball player earning $250,000 from a million voluntary quarters is not unjust — unless the history behind it wasn't actually voluntary.)<br><br>
-        <strong>Nussbaum:</strong> Does a person have the actual, substantive capability to live with dignity — not merely the formal right to?<br><br>
-        <strong>Honneth:</strong> Has this person's standing — through love, law, or social esteem — been recognized, or actively denied?
-      </div>
-      <label for="lenses_apply">Prompt 3.1 — Apply Nozick's own test to Tuskegee</label>
-      <p class="hint">Nozick's framework depends entirely on the historical transaction being voluntary. Why can no version of his framework call Tuskegee's enrollment legitimate?</p>
-      <p class="response-hint" id="lenses_apply_rhint"><strong>Watch for:</strong> writing "because it wasn't voluntary" — that's the premise already stated in the question, not an answer to it. A full answer explains specifically what made the enrollment look voluntary on its face while the deliberate concealment made genuine consent impossible.</p>
-      <textarea id="lenses_apply" data-required="true" aria-describedby="lenses_apply_error lenses_apply_rhint"></textarea>
-      <p class="error-inline" id="lenses_apply_error">This still needs a response.</p>
-    </section>
-
-    <section id="testimonial">
-      <div class="section-kicker">4 · Testimonial Injustice</div>
-      <h2>When a person's own account can't count as evidence</h2>
-      <div class="callout">Testimonial injustice: a person's account of their own experience given less credibility than it deserves because of prejudice against who they are, rather than anything wrong with the account itself.</div>
-      <label for="testimonial_apply">Prompt 4.1 — Apply it to Tuskegee</label>
-      <p class="hint">The men had no route by which their own reported symptoms or confusion about "bad blood" could reach anyone with power to act on it. What does this add to the four lenses that they alone might miss?</p>
-      <p class="response-hint" id="testimonial_apply_rhint"><strong>Watch for:</strong> saying "it shows they were ignored," which restates the case rather than answering what this specific lens contributes beyond the other four. A full answer names what testimonial injustice tracks that a lens checking outcomes, capability, or recognition wouldn't automatically catch: whether the person's own account could function as evidence at all.</p>
-      <textarea id="testimonial_apply" data-required="true" aria-describedby="testimonial_apply_error testimonial_apply_rhint"></textarea>
-      <p class="error-inline" id="testimonial_apply_error">This still needs a response.</p>
-    </section>
-
-    <section id="audit">
-      <div class="section-kicker">5 · Running the Four Audits</div>
-      <h2>Four instruments, not one</h2>
-      <table class="mini">
-        <tr><th>Lens</th><th>What It Reveals</th></tr>
-        <tr><td>Rawls</td><td>No one reasoning from behind a veil could rationally choose an arrangement where one group's survival is knowingly sacrificed to another's scientific curiosity.</td></tr>
-        <tr><td>Nozick</td><td>Enrollment through deliberate concealment is not a voluntary transaction — the very fact his framework requires was manufactured to look present while entirely absent.</td></tr>
-        <tr><td>Nussbaum</td><td>Life and bodily health, practical reason, and affiliation were all denied simultaneously.</td></tr>
-        <tr><td>Honneth</td><td>Legal recognition and social esteem were both denied at the deepest level.</td></tr>
-      </table>
-      <label for="audit_reflect">Prompt 5.1 — Why does this matter?</label>
-      <p class="hint">Tuskegee fails all four audits at once. What does that tell you about these four lenses — are they competing theories fighting for one right answer, or something else?</p>
-      <p class="response-hint" id="audit_reflect_rhint"><strong>Watch for:</strong> concluding simply "they're all correct" without saying what it means that four genuinely different criteria converge on the same case. A full answer explains what that convergence itself tells you — about this case, or about what these four lenses are actually for.</p>
-      <textarea id="audit_reflect" data-required="true" aria-describedby="audit_reflect_error audit_reflect_rhint"></textarea>
-      <p class="error-inline" id="audit_reflect_error">This still needs a response.</p>
-    </section>
-
-    <section id="bail">
-      <div class="section-kicker">6 · The Bail Hearing</div>
-      <h2>The same structure, today</h2>
-      <div class="casebox">
-        <p>A bail hearing takes twelve minutes. A man arrested on a nonviolent charge can't afford eight hundred dollars — ten percent of his eight-thousand-dollar bail. Over four months in jail awaiting trial, he loses his job, his apartment, and time with his children. He accepts a plea rather than wait longer.</p>
-      </div>
-      <label for="bail_audit">Prompt 6.1 — Run one lens on the bail hearing</label>
-      <p class="hint">Pick one of the four lenses and apply it to this case directly.</p>
-      <p class="response-hint" id="bail_audit_rhint"><strong>Watch for:</strong> naming a lens and then just asserting the outcome is unjust, without actually running that lens's specific question against the facts. A full answer shows the reasoning — what that lens's actual test says applied to the $800 bail and the four months in jail, not just the verdict.</p>
-      <textarea id="bail_audit" data-required="true" aria-describedby="bail_audit_error bail_audit_rhint"></textarea>
-      <p class="error-inline" id="bail_audit_error">This still needs a response.</p>
-    </section>
-
-    <section id="before">
-      <div class="section-kicker">7 · Before You Reason It Through</div>
-      <h2>A rule in your own institution</h2>
-      <div class="stop-box">
-        <p><strong class="stop-label">Stop — write before continuing</strong></p>
-        <p>Name one real rule in an institution you belong to that you suspect would not survive being redesigned from behind a genuine veil of ignorance. Write your honest first sense of why, before reasoning it through. Once you move on, don't come back and revise this.</p>
-      </div>
-      <label for="own_rule_first">Prompt 7.1 — Your rule and first reaction</label>
-      <p class="response-hint" id="own_rule_first_rhint"><strong>Watch for:</strong> naming something too vague to actually test — "the way things are run here" — instead of one specific rule you could describe to someone unfamiliar with the place. And if you've already explained why the rule might be justified, that's not a first reaction; write the honest gut sense before you defend or attack it.</p>
-      <textarea id="own_rule_first" data-required="true" aria-describedby="own_rule_first_error own_rule_first_rhint"></textarea>
-      <p class="error-inline" id="own_rule_first_error">This still needs a response.</p>
-    </section>
-
-    <section id="ownaudit">
-      <div class="section-kicker">8 · Run the Four-Audit on Your Own Institution</div>
-      <h2>Which lens does it fail first?</h2>
-      <label for="own_audit">Prompt 8.1 — Run the Four-Audit table on your own rule</label>
-      <p class="hint">Which of the four audits does your rule pass easily? Which one does it fail, or come closest to failing?</p>
-      <p class="response-hint" id="own_audit_rhint"><strong>Watch for:</strong> naming which lens the rule fails without saying what about the rule fails it — for instance, naming Nussbaum without saying which actual capability is denied. A full answer runs the specific test, the way the table in Section 5 does, not just names a verdict.</p>
-      <textarea id="own_audit" data-required="true" aria-describedby="own_audit_error own_audit_rhint"></textarea>
-      <p class="error-inline" id="own_audit_error">This still needs a response.</p>
-    </section>
-
-    <section id="after">
-      <div class="section-kicker">9 · After Working Through It</div>
-      <h2>Your final answer</h2>
-      <div class="stop-box">
-        <p><strong class="stop-label">Stop — write before continuing</strong></p>
-        <p>Having run the Four-Audit on your own institution, has your sense of the rule changed? What would change about it if the people who benefit most from it didn't know in advance that they would?</p>
-      </div>
-      <label for="own_rule_final">Prompt 9.1 — Your final answer</label>
-      <p class="response-hint" id="own_rule_final_rhint"><strong>Watch for:</strong> restating your Section 7 first reaction with more confidence, or a vague claim that the rule would "be more fair" without saying what would actually be different about it. A full answer names a specific change the rule would need if the people who benefit most from it were designing it blind to their own advantage.</p>
-      <textarea id="own_rule_final" data-required="true" aria-describedby="own_rule_final_error own_rule_final_rhint"></textarea>
-      <p class="error-inline" id="own_rule_final_error">This still needs a response.</p>
-    </section>
-
-    <section id="revision">
-      <div class="section-kicker">10 · The Revision Check</div>
-      <h2>What actually changed?</h2>
-      <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
-      <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
-      <p class="response-hint" id="revision_check_rhint"><strong>Watch for:</strong> writing "nothing changed" and stopping there. That's an allowed outcome, but only when you explain specifically why your first reaction survived being tested against all four audits, not just assert that it did.</p>
-      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error revision_check_rhint"></textarea>
-      <p class="error-inline" id="revision_check_error">This still needs a response.</p>
-      <div class="checkline">
-        <input type="checkbox" id="journalRef">
-        <div><label for="journalRef">Optional: I explored this further in my Personal Ethics Journal.</label>
-        <span class="zero-credit">No description needed. This box is never worth points, in either direction.</span></div>
-      </div>
-    </section>
-
-    <section id="output">
-      <div class="section-kicker">11 · Output Card</div>
-      <h2>Chapter 8 Workbook Output Card</h2>
-      <div class="error-summary" id="errorSummary" tabindex="-1">
-        <h3>Please complete these items before creating the Output Card</h3>
-        <ul id="errorList"></ul>
-      </div>
-      <div class="buttons">
-        <button type="button" id="generateBtn">Generate Output Card</button>
-        <button type="button" class="secondary" id="copyBtn">Copy Output Card</button>
-        <button type="button" class="secondary" id="downloadBtn">Download Output Card</button>
-      </div>
-      <label for="outputText">Output Card</label>
-      <textarea id="outputText" readonly></textarea>
-      <div id="completeMsg" class="success" hidden>You've completed the Chapter 8 workbook — Tuskegee's real case in full, the Four-Audit Diagnostic applied to a historical case, a contemporary parallel, and your own institution, with an honest process trail throughout.</div>
-    </section>
-  </main>
-</div>
-<footer>Chapter 8 Workbook v2.1 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
-<script>
-(function() {
-  'use strict';
-  const STORAGE_KEY = 'ch8_workbook_v2_justice_recognition';
-  const requiredFields = Array.from(document.querySelectorAll('[data-required="true"]'));
-  const allFields = Array.from(document.querySelectorAll('textarea, select, input[type="checkbox"]'));
-  const barFill = document.getElementById('barFill');
-  const progressText = document.getElementById('progressText');
-  const outputText = document.getElementById('outputText');
-  const completeMsg = document.getElementById('completeMsg');
-  const errorSummary = document.getElementById('errorSummary');
-  const errorList = document.getElementById('errorList');
-  const journalRef = document.getElementById('journalRef');
-
-  function isFilled(el) { if (el.type === 'checkbox') return el.checked; return (el.value || '').trim().length > 0; }
-  function valueOf(id) { const el = document.getElementById(id); if (!el) return ''; return el.type === 'checkbox' ? (el.checked ? 'Yes' : 'No') : (el.value || '').trim(); }
-  function labelFor(id) { const l = document.querySelector('label[for="'+id+'"]'); return l ? l.textContent.replace(/\s+/g,' ').trim() : id; }
-
-  function collect() {
-    const data = {};
-    allFields.forEach(el => { data[el.id] = el.type === 'checkbox' ? el.checked : el.value; });
-    data.savedAt = new Date().toISOString();
-    return data;
-  }
-  function saveDraft() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(collect())); } catch(e) { console.warn('Could not save draft', e); } }
-  function loadDraft() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return;
-      const data = JSON.parse(raw);
-      allFields.forEach(el => {
-        if (!(el.id in data)) return;
-        if (el.type === 'checkbox') el.checked = Boolean(data[el.id]);
-        else el.value = data[el.id];
-      });
-    } catch(e) { console.warn('Could not load draft', e); }
-  }
-  function updateProgress() {
-    const done = requiredFields.filter(isFilled).length;
-    const total = requiredFields.length;
-    const pct = total ? Math.round((done/total)*100) : 0;
-    barFill.style.width = pct + '%';
-    progressText.textContent = done + ' of ' + total + ' required responses completed.';
-    return { done, total };
-  }
-  function clearErrors() {
-    errorList.innerHTML = ''; errorSummary.style.display = 'none';
-    requiredFields.forEach(el => { el.setAttribute('aria-invalid','false'); const e=document.getElementById(el.id+'_error'); if(e) e.style.display='none'; });
-  }
-  function validate() {
-    clearErrors();
-    const missing = requiredFields.filter(el => !isFilled(el));
-    if (missing.length) {
-      missing.forEach(el => {
-        el.setAttribute('aria-invalid','true');
-        const e = document.getElementById(el.id+'_error'); if(e) e.style.display='block';
-        const li = document.createElement('li'); const a = document.createElement('a');
-        a.href = '#' + el.id; a.textContent = labelFor(el.id); li.appendChild(a); errorList.appendChild(li);
-      });
-      errorSummary.style.display = 'block'; errorSummary.focus();
-      return false;
-    }
-    return true;
-  }
-  function line(label, value) { return label + '\n' + (value || '[not completed]') + '\n'; }
-  function buildOutput() {
-    return [
-      'Chapter 8 Workbook Output Card — Justice, Recognition',
-      '',
-      line('Tuskegee — what made the deception effective:', valueOf('case_read')),
-      line('The Four Lenses — Nozick\'s own test applied:', valueOf('lenses_apply')),
-      line('Testimonial Injustice, applied to Tuskegee:', valueOf('testimonial_apply')),
-      line('Running the Four Audits — reflection:', valueOf('audit_reflect')),
-      line('The Bail Hearing — one lens applied:', valueOf('bail_audit')),
-      '',
-      line('Before you reason it through — your rule and first reaction:', valueOf('own_rule_first')),
-      line('Running the Four-Audit on your own institution:', valueOf('own_audit')),
-      line('After working through it — your final answer:', valueOf('own_rule_final')),
-      line('The Revision Check — what actually changed:', valueOf('revision_check')),
-      '',
-      'Optional Journal reference: ' + (journalRef.checked ? 'Yes' : 'No')
-    ].join('\n');
-  }
-  function download(filename, text) {
-    const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = filename;
-    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-  }
-  function worksheetText() {
-    return [
-      'Chapter 8 Workbook Worksheet v2.1 — Justice, Recognition',
-      '',
-      'Tuskegee: 1932-1972, 399 men with syphilis, 201 controls, "bad blood," penicillin withheld after 1947, Peter Buxtun\'s 1972 whistleblowing.',
-      '',
-      '1. What made the deception effective, not less, given the trust the researchers deliberately built?',
-      '',
-      '2. Apply Nozick\'s own test to Tuskegee — why can no version of his framework call the enrollment legitimate?',
-      '',
-      '3. Testimonial Injustice, applied to Tuskegee.',
-      '',
-      '4. Running the Four Audits — are these competing theories, or something else?',
-      '',
-      '5. The Bail Hearing — apply one of the four lenses directly.',
-      '',
-      '6. STOP — before continuing: name a real rule in your own institution, and your honest first sense of whether it would survive a veil of ignorance. Do not revise this after moving on.',
-      '',
-      '7. Run the Four-Audit table on your own rule. Which does it pass easily? Which does it fail?',
-      '',
-      '8. STOP — after working through it: your final answer.',
-      '',
-      '9. Revision Check — what specifically changed? If nothing changed, say so honestly.',
-      '',
-      'Optional: note here if you explored this further in your Personal Ethics Journal (not graded).'
-    ].join('\n');
-  }
-  document.addEventListener('input', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
-  document.addEventListener('change', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
-  document.getElementById('saveBtn').addEventListener('click', () => { saveDraft(); alert('Draft saved in this browser.'); });
-  document.getElementById('clearBtn').addEventListener('click', () => {
-    if (!confirm('Clear this saved Chapter 8 draft from this browser?')) return;
-    localStorage.removeItem(STORAGE_KEY);
-    allFields.forEach(el => { if (el.type === 'checkbox') el.checked = false; else el.value = ''; });
-    outputText.value = ''; completeMsg.hidden = true; clearErrors(); updateProgress();
-  });
-  document.getElementById('generateBtn').addEventListener('click', () => {
-    if (!validate()) return;
-    outputText.value = buildOutput();
-    completeMsg.hidden = false;
-    saveDraft();
-  });
-  document.getElementById('copyBtn').addEventListener('click', async () => {
-    if (!outputText.value.trim()) outputText.value = buildOutput();
-    try { await navigator.clipboard.writeText(outputText.value); alert('Output Card copied.'); }
-    catch(e) { outputText.select(); document.execCommand('copy'); alert('Output Card selected/copied.'); }
-  });
-  document.getElementById('downloadBtn').addEventListener('click', () => {
-    if (!outputText.value.trim()) outputText.value = buildOutput();
-    download('chapter_8_output_card.txt', outputText.value);
-  });
-  document.getElementById('downloadWorksheet').addEventListener('click', () => {
-    download('chapter_8_workbook_worksheet.txt', worksheetText());
-  });
-  loadDraft();
-  updateProgress();
-}());
-</script>
+    <footer>ECT Chapter 8 v3 · Doing, Justice & Recognition · local-only classroom conversation lab · multiple audits, standing, licensing, and REOPEN retained</footer>
+    <script>
+    (() => {
+        'use strict';
+        const KEY = 'ect_ch8_v3_doing_justice_recognition',
+            SNAP = 'ect_ch8_v3_mapa',
+            XSNAP = 'ect_ch8_v3_transfer';
+        const qa = s => [...document.querySelectorAll(s)],
+            el = id => document.getElementById(id);
+        const fields = qa('textarea,select,input[type=checkbox]'),
+            required = qa('[data-required="true"]');
+        const val = id => {
+            const e = el(id);
+            if (!e)
+                return '';
+            return e.type === 'checkbox' ? (e.checked ? 'Yes' : 'No') : (e.value || '').trim()
+        };
+        const filled = e => e.type === 'checkbox' ? e.checked : (e.value || '').trim().length > 0;
+        function collect() {
+            const d = {};
+            fields.forEach(e => d[e.id] = e.type === 'checkbox' ? e.checked : e.value);
+            d.workMode = el('workMode').value;
+            d.savedAt = new Date().toISOString();
+            return d
+        }
+        function save() {
+            try {
+                localStorage.setItem(KEY, JSON.stringify(collect()))
+            } catch (e) {}
+            progress()
+        }
+        function load() {
+            try {
+                const d = JSON.parse(localStorage.getItem(KEY) || '{}');
+                fields.forEach(e => {
+                    if (e.id in d) {
+                        if (e.type === 'checkbox')
+                            e.checked = !!d[e.id];
+                        else
+                            e.value = d[e.id]
+                    }
+                });
+                if (d.workMode)
+                    el('workMode').value = d.workMode
+            } catch (e) {}
+            loadMapA();
+            loadTransfer();
+            mode();
+            progress()
+        }
+        function progress() {
+            const done = required.filter(filled).length,
+                pct = required.length ? Math.round(done / required.length * 100) : 0;
+            el('barFill').style.width = pct + '%';
+            el('progressText').textContent = `${done} of ${required.length} core responses completed.`
+        }
+        function mode() {
+            const g = el('workMode').value === 'group';
+            el('modeNote').textContent = g ? 'Group rule: preserve disagreement. Suggested roles are Mapper, Auditor, Voice-keeper, and License-keeper. Everyone still writes their own Map A and Map B.' : 'Solo rule: run each audit yourself, then construct the strongest reasonable defense of the rule before revising your own map.';
+            el('roleNote').textContent = g ? 'Assign or rotate the roles. Different members can begin with different audits; the reporter records convergence and disagreement without forcing consensus.' : 'Do all four roles yourself: map the system, audit it, ask whose voice counts, and test the licenses between record and action.';
+            try {
+                const d = JSON.parse(localStorage.getItem(KEY) || '{}');
+                d.workMode = el('workMode').value;
+                localStorage.setItem(KEY, JSON.stringify(d))
+            } catch (e) {}
+        }
+        function mapAIds() {
+            return ['a_judgment', 'a_reason', 'a_visible', 'a_missing', 'a_unknown']
+        }
+        function mapAText(s) {
+            return `MAP A — preserved ${s.when}\n\nJudgment: ${s.a_judgment || ''}\nStrongest reason: ${s.a_reason || ''}\nWhat the system sees: ${s.a_visible || ''}\nWhat may be missing: ${s.a_missing || ''}\nNeed to know: ${s.a_unknown || ''}`
+        }
+        function loadMapA() {
+            try {
+                const s = JSON.parse(localStorage.getItem(SNAP) || 'null');
+                if (!s)
+                    return;
+                mapAIds().forEach(id => el(id).disabled = true);
+                el('mapAStatus').textContent = 'Map A preserved';
+                el('mapAStatus').className = 'success';
+                ['snapshotA', 'returnSnapshot'].forEach(id => {
+                    el(id).textContent = mapAText(s);
+                    el(id).classList.remove('hidden')
+                })
+            } catch (e) {}
+        }
+        function loadTransfer() {
+            try {
+                const s = JSON.parse(localStorage.getItem(XSNAP) || 'null');
+                if (!s)
+                    return;
+                el('transfer_analysis').disabled = true;
+                el('transferSnapshot').textContent = `TRANSFER FIRST PASS — ${s.when}\n\n${s.text}`;
+                el('transferSnapshot').classList.remove('hidden');
+                el('selfCheck').classList.remove('hidden')
+            } catch (e) {}
+        }
+        qa('textarea,select,input').forEach(e => {
+            e.addEventListener('input', save);
+            e.addEventListener('change', save)
+        });
+        el('workMode').addEventListener('change', mode);
+        el('sealBtn').onclick = () => {
+            const ids = mapAIds();
+            if (ids.some(id => !val(id))) {
+                alert('Complete the first-map fields before preserving Map A.');
+                return
+            }
+            const s = {
+                when: new Date().toLocaleString()
+            };
+            ids.forEach(id => s[id] = val(id));
+            try {
+                localStorage.setItem(SNAP, JSON.stringify(s))
+            } catch (e) {}
+            save();
+            loadMapA()
+        };
+        el('unsealBtn').onclick = () => {
+            if (!confirm('Reset Map A only for a technical or accidental entry error?'))
+                return;
+            localStorage.removeItem(SNAP);
+            mapAIds().forEach(id => el(id).disabled = false);
+            ['snapshotA', 'returnSnapshot'].forEach(id => el(id).classList.add('hidden'));
+            el('mapAStatus').textContent = 'Map A not yet preserved';
+            el('mapAStatus').className = 'warning'
+        };
+        el('captureTransferBtn').onclick = () => {
+            if (!val('transfer_analysis')) {
+                alert('Write the transfer first pass before opening the self-check.');
+                return
+            }
+            const s = {
+                when: new Date().toLocaleString(),
+                text: val('transfer_analysis')
+            };
+            try {
+                localStorage.setItem(XSNAP, JSON.stringify(s))
+            } catch (e) {}
+            save();
+            loadTransfer()
+        };
+        el('resetTransferBtn').onclick = () => {
+            if (!confirm('Reset the captured transfer first pass?'))
+                return;
+            localStorage.removeItem(XSNAP);
+            el('transfer_analysis').disabled = false;
+            el('transferSnapshot').classList.add('hidden');
+            el('selfCheck').classList.add('hidden')
+        };
+        function section(title, pairs) {
+            let x = `\n${title}\n${'='.repeat(title.length)}\n`;
+            pairs.forEach(([a, b]) => x += `${a}:\n${b || '[not completed]'}\n\n`);
+            return x
+        }
+        function output() {
+            let s = null;
+            try {
+                s = JSON.parse(localStorage.getItem(SNAP) || 'null')
+            } catch (e) {}
+            let o = 'ECT CHAPTER 8 CLASS NOTE — DOING, JUSTICE & RECOGNITION\n';
+            o += section('MAP A', [['Preserved first map', s ? mapAText(s) : '[not preserved]']]);
+            o += section('INSTITUTIONAL DOING', [['Record/classification/action route', val('doing_route')], ['Future possibility narrowed', val('doing_future')], ['Sedimented earlier decision', val('doing_sediment')]]);
+            o += section('FOUR AUDITS', [['Rawls / position audit', val('rawls')], ['Nozick / history audit', val('nozick')], ['Nussbaum / capability audit', val('nussbaum')], ['Honneth / recognition audit', val('honneth')], ['Convergence + difference', val('audit_compare')]]);
+            o += section('VOICE / TESTIMONIAL STANDING', [['Evidence Maya has', val('voice_evidence')], ['Where the evidence channel fails', val('voice_channel')], ['Recognition/appeal repair', val('voice_repair')]]);
+            o += section('HISTORICAL PRESSURE TEST', [['Tuskegee structural lesson', val('history_pressure')]]);
+            o += section('EHI LICENSING', [['Tempting jump', val('jump')], ['Bridge/license needed', val('bridge')], ['Standing', val('standing')]]);
+            o += section('MAP B / AUTHORIAL RETURN', [['Judgment now', val('b_judgment')], ['What carries most weight', val('b_reason')], ['What changed', val('b_change')], ['Claim ceiling', val('b_ceiling')], ['REOPEN condition', val('b_reopen')], ['Authorial Return', val('authorship_return')]]);
+            o += section('TRANSFER', [['Bail first pass', val('transfer_analysis')]]);
+            o += section('CARRY FORWARD', [['Compact sentence', val('carry')], ['Still-open class question', val('discussion')]]);
+            return o
+        }
+        el('generateBtn').onclick = () => {
+            const missing = required.filter(e => !filled(e));
+            el('validation').textContent = missing.length ? `Draft generated, but ${missing.length} core response(s) are still incomplete.` : 'Core class-lab responses complete. Remaining uncertainty belongs in the claim ceiling and REOPEN condition, not hidden by a completion check.';
+            el('output').value = output();
+            save()
+        };
+        el('copyBtn').onclick = async () => {
+            if (!el('output').value)
+                el('output').value = output();
+            try {
+                await navigator.clipboard.writeText(el('output').value);
+                alert('Chapter 8 class note copied.')
+            } catch (e) {
+                el('output').select();
+                document.execCommand('copy')
+            }
+        };
+        el('downloadBtn').onclick = () => {
+            if (!el('output').value)
+                el('output').value = output();
+            const b = new Blob([el('output').value], {
+                    type: 'text/plain;charset=utf-8'
+                }),
+                u = URL.createObjectURL(b),
+                a = document.createElement('a');
+            a.href = u;
+            a.download = 'ECT_CH8_v3_Doing_Justice_Recognition_Class_Note.txt';
+            a.click();
+            URL.revokeObjectURL(u)
+        };
+        el('saveBtn').onclick = () => {
+            save();
+            alert('Saved in this browser.')
+        };
+        el('clearBtn').onclick = () => {
+            if (confirm('Clear all Chapter 8 v3 work saved in this browser?')) {
+                localStorage.removeItem(KEY);
+                localStorage.removeItem(SNAP);
+                localStorage.removeItem(XSNAP);
+                location.reload()
+            }
+        };
+        load();
+    })();
+    </script>
 </body>
 </html>
